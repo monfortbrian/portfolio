@@ -1,0 +1,655 @@
+---
+import Base from '../layouts/Base.astro';
+import { Sun, Moon, LaptopMinimal } from 'lucide-astro';
+
+const projects = [
+  {
+    id: 'tablo',
+    name: 'Tablo',
+    href: 'https://github.com/monfortbrian/tablo',
+    label: 'View on GitHub',
+
+    desc: 'A minimal table-based data organizer built for clarity. Keyboard-first, distraction-free, and blazing fast.',
+    tags: ['Tool', 'Productivity', 'Open Source'],
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
+  <rect width="200" height="120" fill="url(#a)" rx="2"/>
+  <g clip-path="url(#b)" style="mix-blend-mode:screen">
+    <path stroke="#fff" stroke-width="1.8" d="M78.584 41.506a2.922 2.922 0 0 1 2.922-2.922h11.688v14.61h-14.61V41.506Zm29.222-2.922h-14.61v14.61h14.61v-14.61Z"/>
+    <path stroke="#fff" stroke-width="1.8" d="M107.805 38.584h11.688a2.922 2.922 0 0 1 2.922 2.922v11.688h-14.61v-14.61Zm-14.611 14.61h-14.61v14.61h14.61v-14.61Zm14.612 0h-14.61v14.61h14.61v-14.61ZM93.195 67.805h14.611v14.61h-14.61v-14.61Z"/>
+  </g>
+  <defs>
+    <linearGradient id="a" x1="0" x2="94.852" y1="0" y2="146.984" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#155622"/>
+      <stop offset="1" stop-color="#0F1E12"/>
+    </linearGradient>
+    <clipPath id="b">
+      <path fill="#fff" d="M78 38h45v45H78z"/>
+    </clipPath>
+  </defs>
+</svg>`,
+  },
+  {
+    id: 'autoname',
+    name: 'AutoName',
+    href: 'https://shorturl.at/P26Hj',
+    label: 'View Project',
+
+    desc: 'Automated file naming tool that intelligently renames assets using context, patterns, and custom rules.',
+    tags: ['Automation', 'CLI', 'Utility'],
+    svg: `<svg width="56" height="56" viewBox="0 0 64 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 8 L20 16 L20 35 L32 43 L44 35 L44 16 Z" fill="#2a1f48" stroke="#4a3a78" stroke-width="1.5"/>
+      <line x1="32" y1="8" x2="32" y2="43" stroke="#4a3a78" stroke-width="1"/>
+      <line x1="20" y1="25" x2="44" y2="25" stroke="#4a3a78" stroke-width="1"/>
+      <path d="M24 20 L32 17 L40 20" stroke="#7a6ab8" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M24 30 L32 33 L40 30" stroke="#7a6ab8" stroke-width="1.5" stroke-linecap="round"/>
+      <circle cx="32" cy="25" r="3" fill="#6a5aa8"/>
+    </svg>`,
+  },
+  {
+    id: 'drift',
+    name: 'Drift',
+    href: 'https://shorturl.at/UFOhN',
+    label: 'View Project',
+
+    desc: 'A focused writing environment with smart document management, clean typography, and zero clutter.',
+    tags: ['Writing', 'Productivity', 'Web App'],
+    svg: `<svg width="56" height="56" viewBox="0 0 64 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="14" y="8" width="36" height="26" rx="5" fill="#1a3a1c" stroke="#2a5a2e" stroke-width="1.5"/>
+      <rect x="20" y="14" width="10" height="2" rx="1" fill="#4a8a4e"/>
+      <rect x="20" y="19" width="16" height="2" rx="1" fill="#2a5a2e"/>
+      <rect x="20" y="24" width="12" height="2" rx="1" fill="#2a5a2e"/>
+      <circle cx="40" cy="18" r="4" fill="#3a6a3e"/>
+      <path d="M38.5 18 L39.5 19.2 L41.5 16.8" stroke="#6abd6e" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M26 34 L26 40" stroke="#2a5a2e" stroke-width="2" stroke-linecap="round"/>
+      <path d="M38 34 L38 40" stroke="#2a5a2e" stroke-width="2" stroke-linecap="round"/>
+      <rect x="20" y="39" width="24" height="3" rx="1.5" fill="#1a3a1c" stroke="#2a5a2e" stroke-width="1"/>
+    </svg>`,
+  },
+  {
+    id: 'designsystem',
+    name: 'Design System',
+    href: 'https://shorturl.at/r2cnb',
+    label: 'View System',
+
+    desc: 'A comprehensive component library and token system for building consistent, scalable product interfaces.',
+    tags: ['Design', 'Components', 'Figma'],
+    svg: `<svg width="56" height="56" viewBox="0 0 64 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="10" y="6" width="44" height="39" rx="6" fill="#0f2233" stroke="#1a3a52" stroke-width="1.5"/>
+      <path d="M20 14 L20 37" stroke="#4a9fd4" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M20 14 L28 22 L20 30" stroke="#4a9fd4" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      <path d="M32 18 L44 18" stroke="#2a5a72" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M32 24 L40 24" stroke="#2a5a72" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M32 30 L44 30" stroke="#2a5a72" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>`,
+  },
+  {
+    id: 'fence',
+    name: 'Fence App',
+    href: 'https://www.npmjs.com/package/create-fence-app',
+    label: 'View on npm',
+
+    desc: 'A scaffolding CLI that spins up opinionated project templates for modern web apps in seconds.',
+    tags: ['CLI', 'npm', 'Scaffolding'],
+    svg: `<svg width="56" height="56" viewBox="0 0 64 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="18" cy="25" r="7" fill="#2a1a08" stroke="#e06b16" stroke-width="1.5"/>
+      <circle cx="46" cy="25" r="7" fill="#2a1a08" stroke="#e06b16" stroke-width="1.5"/>
+      <circle cx="32" cy="14" r="5" fill="#2a1a08" stroke="#f08030" stroke-width="1.5"/>
+      <circle cx="32" cy="36" r="5" fill="#2a1a08" stroke="#f08030" stroke-width="1.5"/>
+      <line x1="25" y1="25" x2="39" y2="25" stroke="#e06b16" stroke-width="1.2"/>
+      <line x1="23" y1="20" x2="28" y2="17" stroke="#c05010" stroke-width="1.2"/>
+      <line x1="41" y1="20" x2="36" y2="17" stroke="#c05010" stroke-width="1.2"/>
+      <line x1="23" y1="30" x2="28" y2="33" stroke="#c05010" stroke-width="1.2"/>
+      <line x1="41" y1="30" x2="36" y2="33" stroke="#c05010" stroke-width="1.2"/>
+      <circle cx="18" cy="25" r="2.5" fill="#e06b16"/>
+      <circle cx="46" cy="25" r="2.5" fill="#e06b16"/>
+      <circle cx="32" cy="14" r="2" fill="#f08030"/>
+      <circle cx="32" cy="36" r="2" fill="#f08030"/>
+    </svg>`,
+  },
+  {
+    id: 'openmrs',
+    name: 'OpenMRS',
+    href: 'https://github.com/monfortbrian/vaccine-pipeline',
+    label: 'View on GitHub',
+
+    desc: 'A vaccine pipeline module for OpenMRS — automating immunization tracking and coverage reporting for clinics.',
+    tags: ['Healthcare', 'Open Source', 'Python'],
+    svg: `<svg width="56" height="56" viewBox="0 0 64 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M38 10 L54 26" stroke="#4a9a5a" stroke-width="3" stroke-linecap="round"/>
+      <rect x="26" y="22" width="12" height="22" rx="3" transform="rotate(-45 26 22)" fill="#1a4a22" stroke="#3a8a42" stroke-width="1.5"/>
+      <rect x="29" y="25" width="6" height="14" rx="1.5" transform="rotate(-45 29 25)" fill="#2a6a32"/>
+      <path d="M12 38 L22 28" stroke="#4a9a5a" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="10" cy="40" r="3" fill="#1a4a22" stroke="#3a8a42" stroke-width="1.5"/>
+      <path d="M40 8 L44 12" stroke="#6aba7a" stroke-width="2" stroke-linecap="round"/>
+      <path d="M44 8 L48 12" stroke="#6aba7a" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>`,
+  },
+  {
+    id: 'sentra',
+    name: 'Sentra',
+    href: 'https://github.com/monfortbrian/sentra-cold-chain-monitoring',
+    label: 'View on GitHub',
+
+    desc: 'Cold chain monitoring system for temperature-sensitive logistics — real-time alerts, dashboards, and audit trails.',
+    tags: ['IoT', 'Monitoring', 'Healthcare'],
+    svg: `<svg width="56" height="56" viewBox="0 0 64 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="14" y="6" width="36" height="39" rx="6" fill="#0e1e32" stroke="#1a3a5a" stroke-width="1.5"/>
+      <rect x="22" y="12" width="20" height="12" rx="2" fill="#1a3050" stroke="#2a4a72" stroke-width="1"/>
+      <path d="M28 18 L32 15 L36 18 L36 21 L32 24 L28 21 Z" fill="#4a7abf" opacity="0.6"/>
+      <line x1="32" y1="28" x2="32" y2="38" stroke="#2a5a82" stroke-width="2" stroke-linecap="round"/>
+      <circle cx="32" cy="38" r="4" fill="#1a3a5a" stroke="#4a8ad4" stroke-width="1.5"/>
+      <circle cx="32" cy="38" r="2" fill="#4a9ad4"/>
+      <line x1="20" y1="30" x2="24" y2="30" stroke="#1a3a5a" stroke-width="1" stroke-linecap="round"/>
+      <line x1="40" y1="30" x2="44" y2="30" stroke="#1a3a5a" stroke-width="1" stroke-linecap="round"/>
+    </svg>`,
+  },
+  {
+    id: 'qms',
+    name: 'Ops Analytics QMS',
+    href: 'https://dev.to/monfortbrian_/how-i-built-an-automated-operational-analytics-pipeline-from-a-queue-management-system-ecc',
+    label: 'Read Case Study',
+
+    desc: 'End-to-end analytics pipeline transforming raw queue data into executive dashboards with automated reporting.',
+    tags: ['Data', 'Analytics', 'Pipeline'],
+    svg: `<svg width="56" height="56" viewBox="0 0 64 51" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="8" y="28" width="10" height="16" rx="2" fill="#3a2a6a" stroke="#5a4a8a" stroke-width="1"/>
+      <rect x="22" y="20" width="10" height="24" rx="2" fill="#4a3a7a" stroke="#6a5a9a" stroke-width="1"/>
+      <rect x="36" y="14" width="10" height="30" rx="2" fill="#5a4a8a" stroke="#7a6aaa" stroke-width="1"/>
+      <rect x="50" y="8" width="10" height="36" rx="2" fill="#6a5a9a" stroke="#8a7aba" stroke-width="1"/>
+      <path d="M13 26 L27 18 L41 12 L55 6" stroke="#9a8aca" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 2"/>
+    </svg>`,
+  },
+];
+
+const caseStudies = [
+  {
+    slug: 'regiq',
+    title: 'RegIQ: Building Regulatory Intelligence for East African Banks',
+    date: '2025',
+    emoji: '⚖',
+  },
+  {
+    slug: 'opsbot',
+    title: 'OpsBot: AI Operations Intelligence Across Two Industries',
+    date: '2024',
+    emoji: '⚡',
+  },
+  {
+    slug: 'qms-pipeline',
+    title: 'QMS Data Pipeline: From Queue System to Executive Dashboard',
+    date: '2024',
+    emoji: '📊',
+  },
+];
+
+const writing = [
+  {
+    slug: 'building-rag-for-african-regulation',
+    title: 'Building a RAG System Over Government Directive PDFs',
+    date: '2025',
+    emoji: '📝',
+  },
+  {
+    href: 'https://dev.to/monfortbrian_/how-i-built-an-automated-operational-analytics-pipeline-from-a-queue-management-system-ecc',
+    title:
+      'How I Built an Automated Analytics Pipeline from a Queue Management System',
+    date: '2024',
+    emoji: '🔧',
+  },
+];
+
+const pills = [
+  { label: 'Design Systems', top: '8%', left: '0%', rotate: -10 },
+  { label: 'Product Design', top: '0%', left: '40%', rotate: 5 },
+  { label: 'n8n Orchestration', top: '20%', left: '80%', rotate: 15 },
+  { label: 'Pitch Deck Design', top: '65%', left: '62%', rotate: -23 },
+  { label: 'Interface Design', top: '78%', left: '2%', rotate: 8 },
+  { label: 'Browser Extensions', top: '45%', left: '90%', rotate: -12 },
+  { label: 'Figma Plugins', top: '85%', left: '35%', rotate: 20 },
+  { label: 'User Experience', top: '45%', left: '-2%', rotate: -18 },
+  { label: 'Development', top: '90%', left: '90%', rotate: 35 },
+];
+---
+
+<Base>
+  <div class='col'>
+    <!-- Hero -->
+    <section class='hero'>
+      <div class='hero-top'>
+        <div class='avatar'>
+          <img src='/avatar.png' alt='Brian' />
+        </div>
+      </div>
+      <div>
+        <div class='hero-name'>Monfort Brian</div>
+      </div>
+
+      <div class='hero-tag'>Product Design Engineer.</div>
+
+      <div class='hero-bio'>
+        <p>
+          Between design and engineering - blending UI, code & automation. I
+          craft and ship beautiful, interactive, pixel-perfect web experiences
+          and scalable systems. <a
+            href='https://npmjs.com/~monfortbrian'
+            target='_blank'
+            rel='noopener'>OSS contributor</a
+          > building tools that connect and stay accessible. Partnered with Silicon
+          Valley startups.
+        </p>
+      </div>
+
+      <div class='cta-row'>
+        <a href='mailto:hello@monfortbrian.com' class='cta-btn'>
+          Mail
+          <svg
+            width='10'
+            height='10'
+            viewBox='0 0 12 12'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='1.5'
+            ><path d='M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8'></path></svg
+          >
+        </a>
+        <a
+          href='https://dribbble.com/monfortbrian'
+          target='_blank'
+          rel='noopener'
+          class='cta-btn'
+        >
+          Dribbble
+          <svg
+            width='10'
+            height='10'
+            viewBox='0 0 12 12'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='1.5'
+            ><path d='M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8'></path></svg
+          >
+        </a>
+        <a
+          href='https://github.com/monfortbrian'
+          target='_blank'
+          rel='noopener'
+          class='cta-btn'
+        >
+          GitHub
+          <svg
+            width='10'
+            height='10'
+            viewBox='0 0 12 12'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='1.5'
+            ><path d='M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8'></path></svg
+          >
+        </a>
+      </div>
+    </section>
+
+    <!-- What I bring -->
+    <section class='bring-section'>
+      <div class='section-title'>Skills</div>
+      <div class='bring-inner' id='bring-container'>
+        {
+          pills.map((p) => (
+            <div
+              class='pill'
+              style={`top:${p.top};left:${p.left}; transform: rotate(${p.rotate}deg);`}
+              data-origin-top={p.top}
+              data-origin-left={p.left}
+              data-rotate={p.rotate}
+            >
+              {p.label}
+            </div>
+          ))
+        }
+        <div class='bring-center'>
+          <div class='bring-title'>What I bring to the table</div>
+          <div class='bring-sub'>
+            Digital experiences and systems that engage users and help you stand
+            out
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class='section'>
+      <div class='section-title'>Projects</div>
+      <div class='projects-grid'>
+        {
+          projects.map((p) => (
+            <button
+              class='project-card'
+              style={`background:${p.color}`}
+              data-project={p.id}
+              aria-label={`Open ${p.name} details`}
+              type='button'
+            >
+              <div class='project-card-logo' set:html={p.svg} />
+              <div class='project-card-name'>{p.name}</div>
+            </button>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class='section'>
+      <div class='section-title'>Case Studies</div>
+      <div>
+        {
+          caseStudies.map((c) => (
+            <a href={`/work/${c.slug}`} class='list-row'>
+              <div class='list-thumb'>{c.emoji}</div>
+              <div class='list-info'>
+                <div class='list-title'>{c.title}</div>
+                <div class='list-date'>{c.date}</div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section class='section'>
+      <div class='section-title'>Writing</div>
+      <div>
+        {
+          writing.map((w) => (
+            <a
+              href={w.href || `/blog/${w.slug}`}
+              class='list-row'
+              target={w.href ? '_blank' : undefined}
+              rel={w.href ? 'noopener noreferrer' : undefined}
+            >
+              <div class='list-thumb'>{w.emoji}</div>
+              <div class='list-info'>
+                <div class='list-title'>{w.title}</div>
+                <div class='list-date'>{w.date}</div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class='footer'>
+      <div class='footer-inner'>
+        <div class='footer-links'>
+          <a
+            href='https://github.com/monfortbrian'
+            target='_blank'
+            rel='noopener'>GitHub</a
+          >
+          <a href='https://linkedin.com' target='_blank' rel='noopener'
+            >LinkedIn</a
+          >
+          <a href='https://dribbble.com' target='_blank' rel='noopener'
+            >Dribbble</a
+          >
+          <a
+            href='https://YOUR_GDRIVE_OR_DROPBOX_LINK'
+            target='_blank'
+            rel='noopener'>Résumé</a
+          >
+        </div>
+        <div class='theme-toggle'>
+          <button
+            class='theme-btn'
+            data-theme-val='light'
+            aria-label='Light mode'
+          >
+            <Sun size={15} />
+          </button>
+          <button
+            class='theme-btn active'
+            data-theme-val='system'
+            aria-label='System mode'
+          >
+            <LaptopMinimal size={15} />
+          </button>
+          <button
+            class='theme-btn'
+            data-theme-val='dark'
+            aria-label='Dark mode'
+          >
+            <Moon size={15} />
+          </button>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Project Modal -->
+  <div
+    class='modal-backdrop'
+    id='modal'
+    role='dialog'
+    aria-modal='true'
+    aria-label='Project details'
+  >
+    <div class='modal'>
+      <button class='modal-close' id='modal-close' aria-label='Close'>×</button>
+      <div class='modal-icon' id='modal-icon'></div>
+      <div class='modal-name' id='modal-name'></div>
+      <div class='modal-desc' id='modal-desc'></div>
+      <div class='modal-tags' id='modal-tags'></div>
+      <a
+        class='modal-link'
+        id='modal-link'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <span id='modal-link-label'></span>
+        <svg
+          width='10'
+          height='10'
+          viewBox='0 0 12 12'
+          fill='none'
+          stroke='currentColor'
+          stroke-width='1.5'
+          ><path d='M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8'></path></svg
+        >
+      </a>
+    </div>
+  </div>
+
+  <script define:vars={{ projects }}>
+    // ── Theme ──────────────────────────────────────────────────────────────
+    const root = document.documentElement;
+    const btns = document.querySelectorAll('.theme-btn');
+
+    function applyTheme(val) {
+      const pref =
+        val === 'system'
+          ? window.matchMedia('(prefers-color-scheme: dark)').matches
+            ? 'dark'
+            : 'light'
+          : val;
+      root.setAttribute('data-theme', pref);
+      localStorage.setItem('theme', val);
+      btns.forEach((b) =>
+        b.classList.toggle('active', b.dataset.themeVal === val),
+      );
+    }
+
+    const saved = localStorage.getItem('theme') || 'system';
+    applyTheme(saved);
+    btns.forEach((b) =>
+      b.addEventListener('click', () => applyTheme(b.dataset.themeVal)),
+    );
+    window
+      .matchMedia('(prefers-color-scheme: dark)')
+      .addEventListener('change', () => {
+        if (localStorage.getItem('theme') === 'system') applyTheme('system');
+      });
+
+    // ── Draggable pills ────────────────────────────────────────────────────
+    const container = document.getElementById('bring-container');
+    const pillEls = container.querySelectorAll('.pill');
+
+    pillEls.forEach((pill) => {
+      let dragging = false;
+      let startX, startY, startLeft, startTop;
+
+      function getOriginPx() {
+        const cw = container.offsetWidth;
+        const ch = container.offsetHeight;
+        const ot = pill.dataset.originTop;
+        const ol = pill.dataset.originLeft;
+        const topPx = ot.includes('%')
+          ? (parseFloat(ot) / 100) * ch
+          : parseFloat(ot);
+        const leftPx = ol.includes('%')
+          ? (parseFloat(ol) / 100) * cw
+          : parseFloat(ol);
+        return { topPx, leftPx };
+      }
+
+      pill.addEventListener('mousedown', (e) => {
+        dragging = true;
+        pill.classList.add('dragging');
+        const rect = pill.getBoundingClientRect();
+        const cRect = container.getBoundingClientRect();
+        startX = e.clientX;
+        startY = e.clientY;
+        startLeft = rect.left - cRect.left;
+        startTop = rect.top - cRect.top;
+        pill.style.left = startLeft + 'px';
+        pill.style.top = startTop + 'px';
+        e.preventDefault();
+      });
+
+      document.addEventListener('mousemove', (e) => {
+        if (!dragging) return;
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+        const newLeft = Math.max(
+          0,
+          Math.min(container.offsetWidth - pill.offsetWidth, startLeft + dx),
+        );
+        const newTop = Math.max(
+          0,
+          Math.min(container.offsetHeight - pill.offsetHeight, startTop + dy),
+        );
+        pill.style.left = newLeft + 'px';
+        pill.style.top = newTop + 'px';
+      });
+
+      document.addEventListener('mouseup', () => {
+        if (!dragging) return;
+        dragging = false;
+        pill.classList.remove('dragging');
+        const { topPx, leftPx } = getOriginPx();
+        const rotation = pill.dataset.rotate || 0;
+        pill.style.transition =
+          'left 0.5s cubic-bezier(0.25,0,0.15,1), top 0.5s cubic-bezier(0.25,0,0.15,1)';
+        pill.style.left = leftPx + 'px';
+        pill.style.top = topPx + 'px';
+        pill.style.transform = `rotate(${rotation}deg)`;
+        setTimeout(() => {
+          pill.style.transition = '';
+        }, 520);
+      });
+
+      pill.addEventListener(
+        'touchstart',
+        (e) => {
+          const t = e.touches[0];
+          const rect = pill.getBoundingClientRect();
+          const cRect = container.getBoundingClientRect();
+          startX = t.clientX;
+          startY = t.clientY;
+          startLeft = rect.left - cRect.left;
+          startTop = rect.top - cRect.top;
+          pill.style.left = startLeft + 'px';
+          pill.style.top = startTop + 'px';
+          dragging = true;
+          pill.classList.add('dragging');
+          e.preventDefault();
+        },
+        { passive: false },
+      );
+
+      document.addEventListener('touchmove', (e) => {
+        if (!dragging) return;
+        const t = e.touches[0];
+        const dx = t.clientX - startX;
+        const dy = t.clientY - startY;
+        const newLeft = Math.max(
+          0,
+          Math.min(container.offsetWidth - pill.offsetWidth, startLeft + dx),
+        );
+        const newTop = Math.max(
+          0,
+          Math.min(container.offsetHeight - pill.offsetHeight, startTop + dy),
+        );
+        pill.style.left = newLeft + 'px';
+        pill.style.top = newTop + 'px';
+      });
+
+      document.addEventListener('touchend', () => {
+        if (!dragging) return;
+        dragging = false;
+        pill.classList.remove('dragging');
+        const { topPx, leftPx } = getOriginPx();
+        pill.style.transition =
+          'left 0.5s cubic-bezier(0.25,0,0.15,1), top 0.5s cubic-bezier(0.25,0,0.15,1)';
+        pill.style.left = leftPx + 'px';
+        pill.style.top = topPx + 'px';
+        setTimeout(() => {
+          pill.style.transition = '';
+        }, 520);
+      });
+    });
+
+    // ── Modal ──────────────────────────────────────────────────────────────
+    const modal = document.getElementById('modal');
+    const mClose = document.getElementById('modal-close');
+    const mIcon = document.getElementById('modal-icon');
+    const mName = document.getElementById('modal-name');
+    const mDesc = document.getElementById('modal-desc');
+    const mTags = document.getElementById('modal-tags');
+    const mLink = document.getElementById('modal-link');
+    const mLinkLabel = document.getElementById('modal-link-label');
+
+    function openModal(id) {
+      const p = projects.find((x) => x.id === id);
+      if (!p) return;
+      // SVG icon (30x30 clipped circle)
+      mIcon.innerHTML = p.svg;
+      mName.textContent = p.name;
+      mDesc.textContent = p.desc;
+      mTags.innerHTML = p.tags
+        .map((t) => `<span class="modal-tag">${t}</span>`)
+        .join('');
+      mLink.href = p.href;
+      mLinkLabel.textContent = p.label;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('[data-project]').forEach((btn) => {
+      btn.addEventListener('click', () => openModal(btn.dataset.project));
+    });
+
+    mClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</Base>
