@@ -34,10 +34,10 @@ const projects = [
     desc: 'Automated file naming tool that intelligently renames assets using context, patterns, and custom rules. Saves hours of manual work.',
     tags: ['Automation', 'CLI', 'Utility'],
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
-  <rect width="200" height="120" fill="url(#a)" rx="2"/>
+  <rect width="200" height="120" fill="url(#autoname-gradient)" rx="2"/>
   <path fill="#D9D9D9" d="M77.496 41.74c1.335-2.32 4.673-2.32 6.008 0l19.026 33.043C103.865 77.1 102.196 80 99.526 80H61.474c-2.67 0-4.34-2.899-3.004-5.217l19.026-33.044Zm40 36.52c1.335 2.32 4.673 2.32 6.008 0l19.026-33.043c1.335-2.318-.334-5.217-3.004-5.217h-38.052c-2.67 0-4.34 2.899-3.004 5.217l19.026 33.044Z"/>
   <defs>
-    <linearGradient id="a" x1="100" x2="100" y1="0" y2="120" gradientUnits="userSpaceOnUse">
+    <linearGradient id="autoname-gradient" x1="100" x2="100" y1="0" y2="120" gradientUnits="userSpaceOnUse">
       <stop stop-color="#0E1534"/>
       <stop offset="1" stop-color="#293E9A"/>
     </linearGradient>
@@ -58,8 +58,7 @@ const projects = [
   <path fill="#fff" d="M81.2 35.48a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4Z"/>
   <path fill="#fff" d="M121.9 78.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2Z" opacity=".8"/>
   <path fill="#fff" d="M94.25 60.03a9.3 9.3 0 1 0 0 18.6 9.3 9.3 0 0 0 0-18.6Z" opacity=".9"/>
-</svg>
-`,
+</svg>`,
   },
   {
     id: 'designsystem',
@@ -83,8 +82,7 @@ const projects = [
   <path fill="#fff" d="M83 70h5v35h-5zm10 0h5v35h-5zm10 0h5v35h-5zm10 0h5v35h-5z"/>
   <path fill="#6366F1" d="M130 62h50v50h-50z"/>
   <path fill="#fff" d="M173 70v5h-35v-5zm0 10v5h-35v-5zm0 10v5h-35v-5zm0 10v5h-35v-5z"/>
-</svg>
-`,
+</svg>`,
   },
   {
     id: 'fence',
@@ -96,10 +94,10 @@ const projects = [
     tags: ['CLI', 'npm', 'Scaffolding'],
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
   <path fill="#323A45" d="M0 0h200v120H0z"/>
-  <g filter="url(#a)">
+  <g filter="url(#fence-a)">
     <path stroke="#fff" d="M55.5 49.5h89v5h-89z" shape-rendering="crispEdges"/>
   </g>
-  <g filter="url(#b)">
+  <g filter="url(#fence-b)">
     <path stroke="#fff" d="M55.5 65.5h89v5h-89z" shape-rendering="crispEdges"/>
   </g>
   <path fill="#323A45" d="M61.5 35.5h11v49h-11z"/>
@@ -107,21 +105,19 @@ const projects = [
   <path fill="#323A45" d="M105.5 35.5h11v49h-11z"/>
   <path stroke="#fff" d="M105.5 35.5h11v49h-11zm22 0h11v49h-11z"/>
   <defs>
-    <filter id="a" width="98" height="14" x="51" y="48" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+    <filter id="fence-a" width="98" height="14" x="51" y="48" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-      <feOffset dy="3"/>
-      <feGaussianBlur stdDeviation="2"/>
+      <feOffset dy="3"/><feGaussianBlur stdDeviation="2"/>
       <feComposite in2="hardAlpha" operator="out"/>
       <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0"/>
       <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_2279_2703"/>
       <feBlend in="SourceGraphic" in2="effect1_dropShadow_2279_2703" result="shape"/>
     </filter>
-    <filter id="b" width="98" height="14" x="51" y="64" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+    <filter id="fence-b" width="98" height="14" x="51" y="64" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-      <feOffset dy="3"/>
-      <feGaussianBlur stdDeviation="2"/>
+      <feOffset dy="3"/><feGaussianBlur stdDeviation="2"/>
       <feComposite in2="hardAlpha" operator="out"/>
       <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.7 0"/>
       <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_2279_2703"/>
@@ -188,21 +184,21 @@ const caseStudies = [
     slug: 'regiq',
     title: 'RegIQ: Building Regulatory Intelligence for East African Banks',
     date: '2025',
-    image: 'public/banking_compliance.jpg',
+    image: '/banking_compliance.jpg',   /* ← fixed: no 'public/' prefix */
     fallbackBg: '#1a1f2e',
   },
   {
     slug: 'opsbot',
     title: 'OpsBot: AI Operations Intelligence Across Two Industries',
     date: '2024',
-    image: 'public/intelligent_biz_ops.jpg',
+    image: '/intelligent_biz_ops.jpg',  /* ← fixed */
     fallbackBg: '#1e1a2e',
   },
   {
     slug: 'qms-pipeline',
     title: 'QMS Data Pipeline: From Queue System to Executive Dashboard',
     date: '2024',
-    image: 'public/data_pipeline.png',
+    image: '/data_pipeline.png',        /* ← fixed */
     fallbackBg: '#1a2218',
   },
 ];
@@ -212,29 +208,30 @@ const writing = [
     slug: 'building-rag-for-african-regulation',
     title: 'Building a RAG System Over Government Directive PDFs',
     date: '2025',
-    image: '/blog/rag-africa.png',
+    image: '/self-taught.png',
     fallbackBg: '#1a1a20',
   },
   {
     href: 'https://dev.to/monfortbrian_/how-i-built-an-automated-operational-analytics-pipeline-from-a-queue-management-system-ecc',
-    title:
-      'How I Built an Automated Analytics Pipeline from a Queue Management System',
+    title: 'How I Built an Automated Analytics Pipeline from a Queue Management System',
     date: '2024',
-    image: '/blog/qms-pipeline.png',
+    image: '/data_pipeline.png',
     fallbackBg: '#201a10',
   },
 ];
 
+/* Pills repositioned to stay inside container on mobile.
+   All values are % of container — overflow:hidden clips anything outside. */
 const pills = [
-  { label: 'Design Systems', top: '8%', left: '0%', rotate: -10 },
-  { label: 'Product Design', top: '0%', left: '40%', rotate: 5 },
-  { label: 'n8n Orchestration', top: '20%', left: '80%', rotate: 15 },
-  { label: 'Pitch Deck Design', top: '65%', left: '62%', rotate: -23 },
-  { label: 'Interface Design', top: '78%', left: '2%', rotate: 8 },
-  { label: 'Browser Extensions', top: '45%', left: '90%', rotate: -12 },
-  { label: 'Figma Plugins', top: '85%', left: '35%', rotate: 20 },
-  { label: 'User Experience', top: '45%', left: '-2%', rotate: -18 },
-  { label: 'Development', top: '90%', left: '90%', rotate: 35 },
+  { label: 'Design Systems',    top: '7%',  left: '2%',   rotate: 20 },
+  { label: 'Product Design',    top: '2%',  left: '40%',  rotate: 5   },
+  { label: 'n8n Orchestration', top: '5%',  left: '68%',  rotate: 8   },
+  { label: 'Pitch Deck Design', top: '60%', left: '55%',  rotate: -12 },
+  { label: 'Interface Design',  top: '72%', left: '2%',   rotate: 6   },
+  { label: 'Browser Extensions',top: '32%', left: '65%',  rotate: -8  },
+  { label: 'Figma Plugins',     top: '82%', left: '38%',  rotate: 14  },
+  { label: 'User Experience',   top: '38%', left: '0%',   rotate: -10 },
+  { label: 'Development',       top: '82%', left: '72%',  rotate: 20  },
 ];
 ---
 
@@ -254,11 +251,7 @@ const pills = [
           Between design and engineering — blending UI, code & automation. I
           craft and ship beautiful, interactive, pixel-perfect web experiences
           and scalable systems.{' '}
-          <a
-            href='https://npmjs.com/~monfortbrian'
-            target='_blank'
-            rel='noopener'>OSS contributor</a
-          >{' '}
+          <a href='https://npmjs.com/~monfortbrian' target='_blank' rel='noopener'>OSS contributor</a>{' '}
           building tools that connect and stay accessible. Partnered with Silicon
           Valley startups.
         </p>
@@ -266,50 +259,19 @@ const pills = [
       <div class='cta-row'>
         <a href='mailto:hello@monfortbrian.com' class='cta-btn'>
           Mail
-          <svg
-            width='10'
-            height='10'
-            viewBox='0 0 12 12'
-            fill='none'
-            stroke='currentColor'
-            stroke-width='1.5'
-          >
+          <svg width='10' height='10' viewBox='0 0 12 12' fill='none' stroke='currentColor' stroke-width='1.5'>
             <path d='M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8'></path>
           </svg>
         </a>
-        <a
-          href='https://dribbble.com/monfortbrian'
-          target='_blank'
-          rel='noopener'
-          class='cta-btn'
-        >
+        <a href='https://dribbble.com/monfortbrian' target='_blank' rel='noopener' class='cta-btn'>
           Dribbble
-          <svg
-            width='10'
-            height='10'
-            viewBox='0 0 12 12'
-            fill='none'
-            stroke='currentColor'
-            stroke-width='1.5'
-          >
+          <svg width='10' height='10' viewBox='0 0 12 12' fill='none' stroke='currentColor' stroke-width='1.5'>
             <path d='M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8'></path>
           </svg>
         </a>
-        <a
-          href='https://github.com/monfortbrian'
-          target='_blank'
-          rel='noopener'
-          class='cta-btn'
-        >
+        <a href='https://github.com/monfortbrian' target='_blank' rel='noopener' class='cta-btn'>
           GitHub
-          <svg
-            width='10'
-            height='10'
-            viewBox='0 0 12 12'
-            fill='none'
-            stroke='currentColor'
-            stroke-width='1.5'
-          >
+          <svg width='10' height='10' viewBox='0 0 12 12' fill='none' stroke='currentColor' stroke-width='1.5'>
             <path d='M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8'></path>
           </svg>
         </a>
@@ -318,27 +280,22 @@ const pills = [
 
     <!-- Skills -->
     <section class='bring-section'>
-      <div class='section-title'>Skills</div>
+      <div class='section-title'>What I bring to the table</div>
       <div class='bring-inner' id='bring-container'>
-        {
-          pills.map((p) => (
-            <div
-              class='pill'
-              style={`top:${p.top};left:${p.left};transform:rotate(${p.rotate}deg);`}
-              data-origin-top={p.top}
-              data-origin-left={p.left}
-              data-rotate={p.rotate}
-            >
-              {p.label}
-            </div>
-          ))
-        }
-        <div class='bring-center'>
-          <div class='bring-title'>What I bring to the table</div>
-          <div class='bring-sub'>
-            Digital experiences and systems that engage users and help you stand
-            out
+        {pills.map((p) => (
+          <div
+            class='pill'
+            style={`top:${p.top};left:${p.left};transform:rotate(${p.rotate}deg);`}
+            data-origin-top={p.top}
+            data-origin-left={p.left}
+            data-rotate={p.rotate}
+          >
+            {p.label}
           </div>
+        ))}
+        <div class='bring-center'>
+
+          <div class='bring-sub'>Digital experiences and systems that engage users and help you stand out</div>
         </div>
       </div>
     </section>
@@ -347,23 +304,20 @@ const pills = [
     <section class='section'>
       <div class='section-title'>Projects</div>
       <div class='projects-grid'>
-        {
-          projects.map((p) => (
-            <button
-              class='project-card'
-              style={`background:${p.color};`}
-              data-project={p.id}
-              aria-label={`Open ${p.name} details`}
-              type='button'
-            >
-              {/* Inner container — gets inset border-radius (nested radius effect) */}
-              <div class='project-card-inner'>
-                <div class='project-card-svg-wrap' set:html={p.svg} />
-              </div>
-              <div class='project-card-name'>{p.name}</div>
-            </button>
-          ))
-        }
+        {projects.map((p) => (
+          <button
+            class='project-card'
+            style={`background:${p.color};`}
+            data-project={p.id}
+            aria-label={`Open ${p.name} details`}
+            type='button'
+          >
+            <div class='project-card-inner'>
+              <div class='project-card-svg-wrap' set:html={p.svg} />
+            </div>
+            <div class='project-card-name'>{p.name}</div>
+          </button>
+        ))}
       </div>
     </section>
 
@@ -371,24 +325,17 @@ const pills = [
     <section class='section'>
       <div class='section-title'>Case Studies</div>
       <div>
-        {
-          caseStudies.map((c) => (
-            <a href={`/work/${c.slug}`} class='list-row'>
-              <div class='list-thumb' style={`background:${c.fallbackBg};`}>
-                <img
-                  src={c.image}
-                  alt={c.title}
-                  loading='lazy'
-                  onerror="this.style.display='none'"
-                />
-              </div>
-              <div class='list-info'>
-                <div class='list-title'>{c.title}</div>
-                <div class='list-date'>{c.date}</div>
-              </div>
-            </a>
-          ))
-        }
+        {caseStudies.map((c) => (
+          <a href={`/work/${c.slug}`} class='list-row'>
+            <div class='list-thumb' style={`background:${c.fallbackBg};`}>
+              <img src={c.image} alt={c.title} loading='lazy' onerror="this.style.display='none'" />
+            </div>
+            <div class='list-info'>
+              <div class='list-title'>{c.title}</div>
+              <div class='list-date'>{c.date}</div>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
 
@@ -396,101 +343,54 @@ const pills = [
     <section class='section'>
       <div class='section-title'>Writing</div>
       <div>
-        {
-          writing.map((w) => (
-            <a
-              href={w.href || `/blog/${w.slug}`}
-              class='list-row'
-              target={w.href ? '_blank' : undefined}
-              rel={w.href ? 'noopener noreferrer' : undefined}
-            >
-              <div class='list-thumb' style={`background:${w.fallbackBg};`}>
-                <img
-                  src={w.image}
-                  alt={w.title}
-                  loading='lazy'
-                  onerror="this.style.display='none'"
-                />
-              </div>
-              <div class='list-info'>
-                <div class='list-title'>{w.title}</div>
-                <div class='list-date'>{w.date}</div>
-              </div>
-            </a>
-          ))
-        }
+        {writing.map((w) => (
+          <a
+            href={w.href || `/blog/${w.slug}`}
+            class='list-row'
+            target={w.href ? '_blank' : undefined}
+            rel={w.href ? 'noopener noreferrer' : undefined}
+          >
+            <div class='list-thumb' style={`background:${w.fallbackBg};`}>
+              <img src={w.image} alt={w.title} loading='lazy' onerror="this.style.display='none'" />
+            </div>
+            <div class='list-info'>
+              <div class='list-title'>{w.title}</div>
+              <div class='list-date'>{w.date}</div>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer — links + theme toggle both centered -->
     <footer class='footer'>
       <div class='footer-inner'>
         <div class='footer-links'>
-          <a
-            href='https://github.com/monfortbrian'
-            target='_blank'
-            rel='noopener'>GitHub</a
-          >
-          <a href='https://linkedin.com' target='_blank' rel='noopener'
-            >LinkedIn</a
-          >
-          <a
-            href='https://dribbble.com/monfortbrian'
-            target='_blank'
-            rel='noopener'>Dribbble</a
-          >
-          <a href='https://YOUR_RESUME_LINK' target='_blank' rel='noopener'
-            >Résumé</a
-          >
+          <a href='https://github.com/monfortbrian' target='_blank' rel='noopener'>GitHub</a>
+          <a href='https://linkedin.com' target='_blank' rel='noopener'>LinkedIn</a>
+          <a href='https://dribbble.com/monfortbrian' target='_blank' rel='noopener'>Dribbble</a>
+          <a href='https://YOUR_RESUME_LINK' target='_blank' rel='noopener'>Résumé</a>
         </div>
         <div class='theme-toggle'>
-          <button
-            class='theme-btn'
-            data-theme-val='light'
-            aria-label='Light mode'><Sun size={15} /></button
-          >
-          <button
-            class='theme-btn active'
-            data-theme-val='system'
-            aria-label='System mode'><LaptopMinimal size={15} /></button
-          >
-          <button class='theme-btn' data-theme-val='dark' aria-label='Dark mode'
-            ><Moon size={15} /></button
-          >
+          <button class='theme-btn' data-theme-val='light' aria-label='Light mode'><Sun size={15} /></button>
+          <button class='theme-btn active' data-theme-val='system' aria-label='System mode'><LaptopMinimal size={15} /></button>
+          <button class='theme-btn' data-theme-val='dark' aria-label='Dark mode'><Moon size={15} /></button>
         </div>
       </div>
     </footer>
   </div>
 
   <!-- Modal -->
-  <div
-    class='modal-backdrop'
-    id='modal'
-    role='dialog'
-    aria-modal='true'
-    aria-label='Project details'
-  >
+  <div class='modal-backdrop' id='modal' role='dialog' aria-modal='true' aria-label='Project details'>
     <div class='modal'>
       <button class='modal-close' id='modal-close' aria-label='Close'>×</button>
       <div class='modal-icon' id='modal-icon'></div>
       <div class='modal-name' id='modal-name'></div>
       <div class='modal-desc' id='modal-desc'></div>
       <div class='modal-tags' id='modal-tags'></div>
-      <a
-        class='modal-link'
-        id='modal-link'
-        target='_blank'
-        rel='noopener noreferrer'
-      >
+      <a class='modal-link' id='modal-link' target='_blank' rel='noopener noreferrer'>
         <span id='modal-link-label'></span>
-        <svg
-          width='10'
-          height='10'
-          viewBox='0 0 12 12'
-          fill='none'
-          stroke='currentColor'
-          stroke-width='1.5'
-        >
+        <svg width='10' height='10' viewBox='0 0 12 12' fill='none' stroke='currentColor' stroke-width='1.5'>
           <path d='M2.5 9.5L9.5 2.5M9.5 2.5H4M9.5 2.5V8'></path>
         </svg>
       </a>
@@ -502,151 +402,85 @@ const pills = [
     const root = document.documentElement;
     const themeBtns = document.querySelectorAll('.theme-btn');
     function applyTheme(val) {
-      const pref =
-        val === 'system'
-          ? window.matchMedia('(prefers-color-scheme: dark)').matches
-            ? 'dark'
-            : 'light'
-          : val;
+      const pref = val === 'system'
+        ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+        : val;
       root.setAttribute('data-theme', pref);
       localStorage.setItem('theme', val);
-      themeBtns.forEach((b) =>
-        b.classList.toggle('active', b.dataset.themeVal === val),
-      );
+      themeBtns.forEach((b) => b.classList.toggle('active', b.dataset.themeVal === val));
     }
     applyTheme(localStorage.getItem('theme') || 'system');
-    themeBtns.forEach((b) =>
-      b.addEventListener('click', () => applyTheme(b.dataset.themeVal)),
-    );
-    window
-      .matchMedia('(prefers-color-scheme: dark)')
-      .addEventListener('change', () => {
-        if (localStorage.getItem('theme') === 'system') applyTheme('system');
-      });
+    themeBtns.forEach((b) => b.addEventListener('click', () => applyTheme(b.dataset.themeVal)));
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+      if (localStorage.getItem('theme') === 'system') applyTheme('system');
+    });
 
-    // Draggable pills
+    // Draggable pills — clamped to container bounds (no bleeding)
     const container = document.getElementById('bring-container');
     container.querySelectorAll('.pill').forEach((pill) => {
-      let dragging = false,
-        startX,
-        startY,
-        startLeft,
-        startTop;
+      let dragging = false, startX, startY, startLeft, startTop;
+
       function originPx() {
-        const ot = pill.dataset.originTop,
-          ol = pill.dataset.originLeft;
-        const cw = container.offsetWidth,
-          ch = container.offsetHeight;
+        const ot = pill.dataset.originTop, ol = pill.dataset.originLeft;
+        const cw = container.offsetWidth, ch = container.offsetHeight;
         return {
-          topPx: ot.includes('%')
-            ? (parseFloat(ot) / 100) * ch
-            : parseFloat(ot),
-          leftPx: ol.includes('%')
-            ? (parseFloat(ol) / 100) * cw
-            : parseFloat(ol),
+          topPx:  ot.includes('%') ? parseFloat(ot)  / 100 * ch : parseFloat(ot),
+          leftPx: ol.includes('%') ? parseFloat(ol) / 100 * cw : parseFloat(ol),
         };
       }
-      function clamp(val, min, max) {
-        return Math.max(min, Math.min(max, val));
-      }
+      function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
       pill.addEventListener('mousedown', (e) => {
-        dragging = true;
-        pill.classList.add('dragging');
-        const r = pill.getBoundingClientRect(),
-          cr = container.getBoundingClientRect();
-        startX = e.clientX;
-        startY = e.clientY;
-        startLeft = r.left - cr.left;
-        startTop = r.top - cr.top;
-        pill.style.left = startLeft + 'px';
-        pill.style.top = startTop + 'px';
+        dragging = true; pill.classList.add('dragging');
+        const r = pill.getBoundingClientRect(), cr = container.getBoundingClientRect();
+        startX = e.clientX; startY = e.clientY;
+        startLeft = r.left - cr.left; startTop = r.top - cr.top;
+        pill.style.left = startLeft + 'px'; pill.style.top = startTop + 'px';
         e.preventDefault();
       });
       document.addEventListener('mousemove', (e) => {
         if (!dragging) return;
-        pill.style.left =
-          clamp(
-            startLeft + e.clientX - startX,
-            0,
-            container.offsetWidth - pill.offsetWidth,
-          ) + 'px';
-        pill.style.top =
-          clamp(
-            startTop + e.clientY - startY,
-            0,
-            container.offsetHeight - pill.offsetHeight,
-          ) + 'px';
+        pill.style.left = clamp(startLeft + e.clientX - startX, 0, container.offsetWidth  - pill.offsetWidth)  + 'px';
+        pill.style.top  = clamp(startTop  + e.clientY - startY, 0, container.offsetHeight - pill.offsetHeight) + 'px';
       });
       document.addEventListener('mouseup', () => {
-        if (!dragging) return;
-        dragging = false;
-        pill.classList.remove('dragging');
+        if (!dragging) return; dragging = false; pill.classList.remove('dragging');
         const { topPx, leftPx } = originPx();
-        pill.style.transition =
-          'left .5s cubic-bezier(.25,0,.15,1),top .5s cubic-bezier(.25,0,.15,1)';
-        pill.style.left = leftPx + 'px';
-        pill.style.top = topPx + 'px';
+        pill.style.transition = 'left .5s cubic-bezier(.25,0,.15,1),top .5s cubic-bezier(.25,0,.15,1)';
+        pill.style.left = leftPx + 'px'; pill.style.top = topPx + 'px';
         pill.style.transform = `rotate(${pill.dataset.rotate || 0}deg)`;
-        setTimeout(() => {
-          pill.style.transition = '';
-        }, 520);
+        setTimeout(() => { pill.style.transition = ''; }, 520);
       });
-      pill.addEventListener(
-        'touchstart',
-        (e) => {
-          const t = e.touches[0],
-            r = pill.getBoundingClientRect(),
-            cr = container.getBoundingClientRect();
-          startX = t.clientX;
-          startY = t.clientY;
-          startLeft = r.left - cr.left;
-          startTop = r.top - cr.top;
-          pill.style.left = startLeft + 'px';
-          pill.style.top = startTop + 'px';
-          dragging = true;
-          pill.classList.add('dragging');
-          e.preventDefault();
-        },
-        { passive: false },
-      );
+
+      pill.addEventListener('touchstart', (e) => {
+        const t = e.touches[0], r = pill.getBoundingClientRect(), cr = container.getBoundingClientRect();
+        startX = t.clientX; startY = t.clientY;
+        startLeft = r.left - cr.left; startTop = r.top - cr.top;
+        pill.style.left = startLeft + 'px'; pill.style.top = startTop + 'px';
+        dragging = true; pill.classList.add('dragging'); e.preventDefault();
+      }, { passive: false });
       document.addEventListener('touchmove', (e) => {
         if (!dragging) return;
         const t = e.touches[0];
-        pill.style.left =
-          clamp(
-            startLeft + t.clientX - startX,
-            0,
-            container.offsetWidth - pill.offsetWidth,
-          ) + 'px';
-        pill.style.top =
-          clamp(
-            startTop + t.clientY - startY,
-            0,
-            container.offsetHeight - pill.offsetHeight,
-          ) + 'px';
+        pill.style.left = clamp(startLeft + t.clientX - startX, 0, container.offsetWidth  - pill.offsetWidth)  + 'px';
+        pill.style.top  = clamp(startTop  + t.clientY - startY, 0, container.offsetHeight - pill.offsetHeight) + 'px';
       });
       document.addEventListener('touchend', () => {
-        if (!dragging) return;
-        dragging = false;
-        pill.classList.remove('dragging');
+        if (!dragging) return; dragging = false; pill.classList.remove('dragging');
         const { topPx, leftPx } = originPx();
-        pill.style.transition =
-          'left .5s cubic-bezier(.25,0,.15,1),top .5s cubic-bezier(.25,0,.15,1)';
-        pill.style.left = leftPx + 'px';
-        pill.style.top = topPx + 'px';
-        setTimeout(() => {
-          pill.style.transition = '';
-        }, 520);
+        pill.style.transition = 'left .5s cubic-bezier(.25,0,.15,1),top .5s cubic-bezier(.25,0,.15,1)';
+        pill.style.left = leftPx + 'px'; pill.style.top = topPx + 'px';
+        setTimeout(() => { pill.style.transition = ''; }, 520);
       });
     });
 
     // Modal
-    const modal = document.getElementById('modal');
-    const mIcon = document.getElementById('modal-icon');
-    const mName = document.getElementById('modal-name');
-    const mDesc = document.getElementById('modal-desc');
-    const mTags = document.getElementById('modal-tags');
-    const mLink = document.getElementById('modal-link');
+    const modal      = document.getElementById('modal');
+    const mIcon      = document.getElementById('modal-icon');
+    const mName      = document.getElementById('modal-name');
+    const mDesc      = document.getElementById('modal-desc');
+    const mTags      = document.getElementById('modal-tags');
+    const mLink      = document.getElementById('modal-link');
     const mLinkLabel = document.getElementById('modal-link-label');
 
     function withUniqueIds(svg, id) {
@@ -661,9 +495,7 @@ const pills = [
       mIcon.innerHTML = `<div class="icon-inner">${withUniqueIds(p.svg, p.id)}</div>`;
       mName.textContent = p.name;
       mDesc.textContent = p.desc;
-      mTags.innerHTML = p.tags
-        .map((t) => `<span class="modal-tag">${t}</span>`)
-        .join('');
+      mTags.innerHTML = p.tags.map((t) => `<span class="modal-tag">${t}</span>`).join('');
       mLink.href = p.href;
       mLinkLabel.textContent = p.label;
       modal.classList.add('open');
@@ -673,19 +505,11 @@ const pills = [
       modal.classList.remove('open');
       document.body.style.overflow = '';
     }
-    document
-      .querySelectorAll('[data-project]')
-      .forEach((btn) =>
-        btn.addEventListener('click', () => openModal(btn.dataset.project)),
-      );
-    document
-      .getElementById('modal-close')
-      .addEventListener('click', closeModal);
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeModal();
-    });
+    document.querySelectorAll('[data-project]').forEach((btn) =>
+      btn.addEventListener('click', () => openModal(btn.dataset.project))
+    );
+    document.getElementById('modal-close').addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   </script>
 </Base>
