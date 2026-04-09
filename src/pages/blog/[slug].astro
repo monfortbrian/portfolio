@@ -19,13 +19,13 @@ export async function getStaticPaths() {
       content: `
         <section id="why">
           <h2>Why this matters</h2>
-          <p>Government regulatory PDFs in Africa are dense, scanned, and completely unsearchable. Building AI on top of them is harder than it sounds — and more important than most people realise.</p>
+          <p>Government regulatory PDFs in Africa are dense, scanned, and completely unsearchable. Building AI on top of them is harder than it sounds - and more important than most people realise.</p>
         </section>
 
         <section id="challenge">
           <h2>The challenge</h2>
           <p>The BNR (National Bank of Rwanda) publishes directives as scanned PDFs. No text layer, no metadata, no structure. Standard PDF parsers return garbage or nothing.</p>
-          <p>On top of that, regulatory language references other directives constantly — "as defined in Article 3 of Directive 1/2019" — so retrieval without cross-document context fails badly.</p>
+          <p>On top of that, regulatory language references other directives constantly - "as defined in Article 3 of Directive 1/2019" - so retrieval without cross-document context fails badly.</p>
         </section>
 
         <section id="approach">
@@ -40,7 +40,7 @@ export async function getStaticPaths() {
 
         <section id="code">
           <h2>Key code</h2>
-          <p>The chunking logic preserves directive number, chapter, article title, and page as metadata on every chunk — giving the retriever structured filters to work with.</p>
+          <p>The chunking logic preserves directive number, chapter, article title, and page as metadata on every chunk - giving the retriever structured filters to work with.</p>
           <pre><code>chunk_metadata = {
   "directive_id": "BNR-2021-04",
   "chapter": "Capital Requirements",
@@ -55,7 +55,7 @@ export async function getStaticPaths() {
             <li>Chunk at the semantic unit of the domain, not at fixed token counts</li>
             <li>GPT-4o Vision OCR is expensive but the only reliable option for scanned African gov docs</li>
             <li>Hybrid retrieval (BM25 + vector) consistently beats pure vector for regulatory text</li>
-            <li>Metadata filtering is not optional — it's what separates toy RAG from production RAG</li>
+            <li>Metadata filtering is not optional - it's what separates toy RAG from production RAG</li>
           </ul>
         </section>
       `,
@@ -71,7 +71,7 @@ export async function getStaticPaths() {
 const { title, date, tags, externalUrl, sections, content } = Astro.props;
 
 // If there's an external URL, redirect at build time isn't possible in Astro
-// without a redirect page — we'll show a nice redirect screen instead
+// without a redirect page - we'll show a nice redirect screen instead
 ---
 
 <Base title={title}>
@@ -137,7 +137,7 @@ const { title, date, tags, externalUrl, sections, content } = Astro.props;
   )}
 
   <style>
-    /* Shared with work pages — ideally move to global.css */
+    /* Shared with work pages - ideally move to global.css */
     .progress-bar {
       position: fixed; top: 0; left: 0; height: 2px; width: 0%;
       background: var(--link); z-index: 300; transition: width 0.1s linear;

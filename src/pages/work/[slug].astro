@@ -7,14 +7,21 @@ export async function getStaticPaths() {
       slug: 'regiq',
       title: 'RegIQ: Building Regulatory Intelligence for East African Banks',
       date: '2025',
-      tags: ['RAG', 'LangChain', 'ChromaDB', 'FastAPI', 'Docker', 'Chrome Extension'],
+      tags: [
+        'RAG',
+        'LangChain',
+        'ChromaDB',
+        'FastAPI',
+        'Docker',
+        'Chrome Extension',
+      ],
       sections: [
-        { id: 'problem',     label: 'The problem' },
-        { id: 'built',       label: 'What I built' },
-        { id: 'architecture',label: 'Architecture' },
-        { id: 'design',      label: 'Design decisions' },
-        { id: 'results',     label: 'Results' },
-        { id: 'links',       label: 'Links' },
+        { id: 'problem', label: 'The problem' },
+        { id: 'built', label: 'What I built' },
+        { id: 'architecture', label: 'Architecture' },
+        { id: 'design', label: 'Design decisions' },
+        { id: 'results', label: 'Results' },
+        { id: 'links', label: 'Links' },
       ],
       content: `
         <section id="problem">
@@ -24,11 +31,11 @@ export async function getStaticPaths() {
 
         <section id="built">
           <h2>What I built</h2>
-          <p>RegIQ is a RAG pipeline over the full National Bank of Rwanda directive corpus — 19 directives, article-level chunking, with directive number, article title, chapter, and page preserved as metadata on every chunk.</p>
+          <p>RegIQ is a RAG pipeline over the full National Bank of Rwanda directive corpus - 19 directives, article-level chunking, with directive number, article title, chapter, and page preserved as metadata on every chunk.</p>
           <p>Scanned PDFs (the majority of African central bank documents) are handled via GPT-4o Vision OCR with table extraction. Clean PDFs use PyMuPDF with layout-aware parsing.</p>
           <figure>
             <img src="/work/regiq-architecture.png" alt="RegIQ system architecture diagram" loading="lazy" />
-            <figcaption>System architecture — ingestion pipeline to Chrome extension</figcaption>
+            <figcaption>System architecture - ingestion pipeline to Chrome extension</figcaption>
           </figure>
         </section>
 
@@ -40,7 +47,7 @@ export async function getStaticPaths() {
 
         <section id="design">
           <h2>Design decisions</h2>
-          <p>Article-level chunking (not page-level) was the critical choice. Regulatory language is precise — splitting mid-article destroys context. This alone improved retrieval relevance from ~60% to ~91% on the eval set.</p>
+          <p>Article-level chunking (not page-level) was the critical choice. Regulatory language is precise - splitting mid-article destroys context. This alone improved retrieval relevance from ~60% to ~91% on the eval set.</p>
           <p>Metadata filtering lets users scope queries to a specific directive year or directive number, cutting hallucination risk significantly.</p>
         </section>
 
@@ -75,15 +82,15 @@ export async function getStaticPaths() {
       date: '2024',
       tags: ['Python', 'OpenAI', 'Slack', 'n8n', 'PostgreSQL'],
       sections: [
-        { id: 'problem',  label: 'The problem' },
-        { id: 'built',    label: 'What I built' },
-        { id: 'results',  label: 'Results' },
-        { id: 'links',    label: 'Links' },
+        { id: 'problem', label: 'The problem' },
+        { id: 'built', label: 'What I built' },
+        { id: 'results', label: 'Results' },
+        { id: 'links', label: 'Links' },
       ],
       content: `
         <section id="problem">
           <h2>The problem</h2>
-          <p>Operations teams at two different companies were drowning in manual reporting — pulling data from 4–6 systems daily to produce status reports nobody had time to read.</p>
+          <p>Operations teams at two different companies were drowning in manual reporting - pulling data from 4–6 systems daily to produce status reports nobody had time to read.</p>
         </section>
         <section id="built">
           <h2>What I built</h2>
@@ -110,10 +117,10 @@ export async function getStaticPaths() {
       date: '2024',
       tags: ['Python', 'PostgreSQL', 'Power BI', 'ETL', 'REST API'],
       sections: [
-        { id: 'problem',  label: 'The problem' },
-        { id: 'built',    label: 'What I built' },
-        { id: 'results',  label: 'Results' },
-        { id: 'links',    label: 'Links' },
+        { id: 'problem', label: 'The problem' },
+        { id: 'built', label: 'What I built' },
+        { id: 'results', label: 'Results' },
+        { id: 'links', label: 'Links' },
       ],
       content: `
         <section id="problem">
@@ -152,46 +159,53 @@ const { title, date, tags, sections, content } = Astro.props;
 
 <Base title={title}>
   <!-- Reading progress bar -->
-  <div class="progress-bar" id="progress-bar"></div>
+  <div class='progress-bar' id='progress-bar'></div>
 
-  <div class="work-layout">
+  <div class='work-layout'>
     <!-- TOC sidebar -->
-    <aside class="toc" id="toc">
-      <div class="toc-inner">
-        <div class="toc-label">Contents</div>
+    <aside class='toc' id='toc'>
+      <div class='toc-inner'>
+        <div class='toc-label'>Contents</div>
         <nav>
-          {sections.map((s, i) => (
-            <a href={`#${s.id}`} class="toc-item" data-section={s.id}>
-              <span class="toc-bar-wrap">
-                <span class="toc-bar" id={`bar-${s.id}`}></span>
-              </span>
-              <span class="toc-text">{s.label}</span>
-            </a>
-          ))}
+          {
+            sections.map((s, i) => (
+              <a href={`#${s.id}`} class='toc-item' data-section={s.id}>
+                <span class='toc-bar-wrap'>
+                  <span class='toc-bar' id={`bar-${s.id}`} />
+                </span>
+                <span class='toc-text'>{s.label}</span>
+              </a>
+            ))
+          }
         </nav>
       </div>
     </aside>
 
     <!-- Main article -->
-    <main class="work-main">
-      <div class="work-col">
-        <a href="/" class="page-back">
-          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M9.5 2.5L2.5 9.5M2.5 9.5H8M2.5 9.5V4"/>
+    <main class='work-main'>
+      <div class='work-col'>
+        <a href='/' class='page-back'>
+          <svg
+            width='12'
+            height='12'
+            viewBox='0 0 12 12'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='1.5'
+          >
+            <path d='M9.5 2.5L2.5 9.5M2.5 9.5H8M2.5 9.5V4'></path>
           </svg>
           Back
         </a>
 
-        <h1 class="page-title">{title}</h1>
+        <h1 class='page-title'>{title}</h1>
 
-        <div class="page-meta">
+        <div class='page-meta'>
           {date}
-          {tags.map((t) => (
-            <span class="meta-tag">{t}</span>
-          ))}
+          {tags.map((t) => <span class='meta-tag'>{t}</span>)}
         </div>
 
-        <div class="page-body" id="article-body" set:html={content} />
+        <div class='page-body' id='article-body' set:html={content} />
       </div>
     </main>
   </div>
@@ -200,7 +214,8 @@ const { title, date, tags, sections, content } = Astro.props;
     /* Progress bar */
     .progress-bar {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       height: 2px;
       width: 0%;
       background: var(--link);
@@ -229,7 +244,11 @@ const { title, date, tags, sections, content } = Astro.props;
       padding-right: 24px;
       self-align: flex-start;
     }
-    .toc-inner { display: flex; flex-direction: column; gap: 4px; }
+    .toc-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
     .toc-label {
       font-size: 10px;
       font-weight: 500;
@@ -251,7 +270,9 @@ const { title, date, tags, sections, content } = Astro.props;
       border-radius: 4px;
     }
     .toc-item:hover,
-    .toc-item.active { color: var(--text); }
+    .toc-item.active {
+      color: var(--text);
+    }
 
     /* Progress bar per section */
     .toc-bar-wrap {
@@ -265,53 +286,106 @@ const { title, date, tags, sections, content } = Astro.props;
     }
     .toc-bar {
       position: absolute;
-      bottom: 0; left: 0;
+      bottom: 0;
+      left: 0;
       width: 100%;
       height: 0%;
       background: var(--link);
       border-radius: 2px;
       transition: height 0.15s ease;
     }
-    .toc-item.active .toc-bar-wrap { background: rgba(126,184,247,0.15); }
-    .toc-item.active .toc-bar      { height: 100%; }
+    .toc-item.active .toc-bar-wrap {
+      background: rgba(126, 184, 247, 0.15);
+    }
+    .toc-item.active .toc-bar {
+      height: 100%;
+    }
 
     /* Main content */
-    .work-main { flex: 1; min-width: 0; }
-    .work-col  { max-width: 580px; padding: 50px 0 80px; }
+    .work-main {
+      flex: 1;
+      min-width: 0;
+    }
+    .work-col {
+      max-width: 580px;
+      padding: 50px 0 80px;
+    }
 
     .page-back {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 12px; color: var(--text2);
-      margin-bottom: 28px; transition: color 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text2);
+      margin-bottom: 28px;
+      transition: color 0.15s;
       text-decoration: none;
     }
-    .page-back:hover { color: var(--text); }
+    .page-back:hover {
+      color: var(--text);
+    }
 
     .page-title {
-      font-size: 19px; font-weight: 500; color: var(--text);
-      margin-bottom: 10px; letter-spacing: -0.01em; line-height: 1.3;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
     }
     .page-meta {
-      display: flex; flex-wrap: wrap; align-items: center;
-      gap: 6px; font-size: 11px; color: var(--text3); margin-bottom: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--text3);
+      margin-bottom: 32px;
     }
     .meta-tag {
-      background: var(--bg2); border: 1px solid var(--border);
-      padding: 2px 7px; border-radius: 4px; font-size: 10px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 10px;
     }
 
     /* Article body */
-    .page-body section { margin-bottom: 40px; scroll-margin-top: 32px; }
+    .page-body section {
+      margin-bottom: 40px;
+      scroll-margin-top: 32px;
+    }
     .page-body h2 {
-      font-size: 13px; font-weight: 500; color: var(--text);
-      margin-bottom: 12px; padding-bottom: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 12px;
+      padding-bottom: 8px;
       border-bottom: 1px solid var(--border);
     }
-    .page-body p  { font-size: 13px; color: var(--text2); line-height: 1.85; margin-bottom: 12px; }
-    .page-body ul { margin: 0 0 12px 18px; }
-    .page-body li { font-size: 13px; color: var(--text2); line-height: 1.7; margin-bottom: 4px; }
-    .page-body a  { color: var(--link); border-bottom: 1px solid rgba(126,184,247,0.25); transition: border-color 0.15s; }
-    .page-body a:hover { border-color: var(--link); }
+    .page-body p {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.85;
+      margin-bottom: 12px;
+    }
+    .page-body ul {
+      margin: 0 0 12px 18px;
+    }
+    .page-body li {
+      font-size: 13px;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-bottom: 4px;
+    }
+    .page-body a {
+      color: var(--link);
+      border-bottom: 1px solid rgba(126, 184, 247, 0.25);
+      transition: border-color 0.15s;
+    }
+    .page-body a:hover {
+      border-color: var(--link);
+    }
 
     /* Images */
     .page-body figure {
@@ -321,32 +395,55 @@ const { title, date, tags, sections, content } = Astro.props;
       border: 1px solid var(--border);
     }
     .page-body figure img {
-      width: 100%; height: auto; display: block;
+      width: 100%;
+      height: auto;
+      display: block;
     }
     .page-body figcaption {
-      font-size: 11px; color: var(--text3);
+      font-size: 11px;
+      color: var(--text3);
       padding: 8px 12px;
       background: var(--bg2);
       border-top: 1px solid var(--border);
     }
 
     /* Case study external links */
-    .case-links { display: flex; flex-wrap: wrap; gap: 8px; }
+    .case-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
     .case-link {
-      display: inline-flex; align-items: center; gap: 7px;
-      padding: 8px 14px; border-radius: 8px;
-      border: 1px solid var(--border2); background: var(--bg2);
-      font-size: 12px; color: var(--text2);
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: 1px solid var(--border2);
+      background: var(--bg2);
+      font-size: 12px;
+      color: var(--text2);
       text-decoration: none !important;
       border-bottom: none !important;
-      transition: color 0.15s, background 0.15s, border-color 0.15s;
+      transition:
+        color 0.15s,
+        background 0.15s,
+        border-color 0.15s;
     }
-    .case-link:hover { color: var(--text); background: var(--bg3); border-color: var(--border2); }
+    .case-link:hover {
+      color: var(--text);
+      background: var(--bg3);
+      border-color: var(--border2);
+    }
 
     /* Hide TOC on small screens */
     @media (max-width: 700px) {
-      .toc { display: none; }
-      .work-layout { padding: 0 20px; }
+      .toc {
+        display: none;
+      }
+      .work-layout {
+        padding: 0 20px;
+      }
     }
   </style>
 
@@ -355,7 +452,7 @@ const { title, date, tags, sections, content } = Astro.props;
     const bar = document.getElementById('progress-bar');
     function updateProgress() {
       const total = document.body.scrollHeight - window.innerHeight;
-      bar.style.width = (window.scrollY / total * 100) + '%';
+      bar.style.width = (window.scrollY / total) * 100 + '%';
     }
     window.addEventListener('scroll', updateProgress, { passive: true });
 
@@ -381,7 +478,8 @@ const { title, date, tags, sections, content } = Astro.props;
       item.addEventListener('click', (e) => {
         e.preventDefault();
         const target = document.getElementById(item.dataset.section);
-        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        if (target)
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       });
     });
   </script>
