@@ -3,28 +3,7 @@ import Base from '../layouts/Base.astro';
 import { Sun, Moon, LaptopMinimal } from 'lucide-astro';
 
 const projects = [
-  {
-    id: 'tablo',
-    name: 'Tablo',
-    href: '',
-    label: 'Coming Soon',
 
-    desc: 'Smart tables for real data in Figma. Paste CSV, Sheets, or text and instantly generate structured, styled, production-ready tables with auto alignment and themes.',
-    tags: ['Figma Plugin', 'Data UI', 'Productivity'],
-    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
-  <rect width="200" height="120" fill="url(#tablo-gradient)" rx="2"/>
-  <g style="mix-blend-mode:screen">
-    <path stroke="#fff" stroke-width="2" d="M69.16 34.353c0-2.25 1.856-4.073 4.146-4.073h16.581v20.364H69.16V34.353Zm41.454-4.073H89.887v20.364h20.727V30.28Zm.001 0h16.582c2.289 0 4.145 1.824 4.145 4.073v16.29h-20.727V30.28ZM89.887 50.645H69.16v20.363h20.727V50.645Zm20.727 0H89.887v20.363h20.727V50.645Z"/>
-    <path stroke="#fff" stroke-width="2" d="M89.887 71.008h20.727V91.37H89.887V71.008Z"/>
-  </g>
-  <defs>
-    <linearGradient id="tablo-gradient" x1="0" x2="153.443" y1="0" y2="163.652" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#155622"/>
-      <stop offset="1" stop-color="#0F1E12"/>
-    </linearGradient>
-  </defs>
-</svg>`,
-  },
   {
     id: 'autoname',
     name: 'AutoName',
@@ -102,6 +81,28 @@ const projects = [
 </svg>
 
 `,
+  },
+   {
+    id: 'tablo',
+    name: 'Tablo',
+    href: '',
+    label: 'Coming Soon',
+
+    desc: 'Smart tables for real data in Figma. Paste CSV, Sheets, or text and instantly generate structured, styled, production-ready tables with auto alignment and themes.',
+    tags: ['Figma Plugin', 'Data UI', 'Productivity'],
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
+  <rect width="200" height="120" fill="url(#tablo-gradient)" rx="2"/>
+  <g style="mix-blend-mode:screen">
+    <path stroke="#fff" stroke-width="2" d="M69.16 34.353c0-2.25 1.856-4.073 4.146-4.073h16.581v20.364H69.16V34.353Zm41.454-4.073H89.887v20.364h20.727V30.28Zm.001 0h16.582c2.289 0 4.145 1.824 4.145 4.073v16.29h-20.727V30.28ZM89.887 50.645H69.16v20.363h20.727V50.645Zm20.727 0H89.887v20.363h20.727V50.645Z"/>
+    <path stroke="#fff" stroke-width="2" d="M89.887 71.008h20.727V91.37H89.887V71.008Z"/>
+  </g>
+  <defs>
+    <linearGradient id="tablo-gradient" x1="0" x2="153.443" y1="0" y2="163.652" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#155622"/>
+      <stop offset="1" stop-color="#0F1E12"/>
+    </linearGradient>
+  </defs>
+</svg>`,
   },
   {
     id: 'design_system',
@@ -296,28 +297,14 @@ const caseStudies = [
     image: '/intelligent_biz_ops.jpg',
     fallbackBg: '#1e1a2e',
   },
-  {
-    slug: 'qms-pipeline',
-    title: 'QMS Data Pipeline: From Queue System to Executive Dashboard',
-    date: '2024',
-    image: '/data_pipeline.png',
-    fallbackBg: '#1a2218',
-  },
 ];
 
 const writing = [
   {
-    slug: 'building-rag-for-african-regulation',
-    title: 'Building a RAG System Over Government Directive PDFs',
-    date: '2025',
-    image: '/self-taught.png',
-    fallbackBg: '#1a1a20',
-  },
-  {
     href: 'https://dev.to/monfortbrian_/how-i-built-an-automated-operational-analytics-pipeline-from-a-queue-management-system-ecc',
     title:
-      'How I Built an Automated Analytics Pipeline from a Queue Management System',
-    date: '2024',
+      'From Operations to Insight: Designing a KPI Layer for Banking Performance',
+    date: '2025',
     image: '/data_pipeline.png',
     fallbackBg: '#201a10',
   },
