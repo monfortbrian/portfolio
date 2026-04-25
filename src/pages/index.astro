@@ -3,13 +3,11 @@ import Base from '../layouts/Base.astro';
 import { Sun, Moon, LaptopMinimal } from 'lucide-astro';
 
 const projects = [
-
   {
     id: 'autoname',
     name: 'AutoName',
     href: 'https://shorturl.at/P26Hj',
     label: 'Use Plugin',
-
     desc: 'Intelligent layer naming for Figma. Renames components using context-aware logic and industry conventions to keep files clean, scalable, and dev-ready.',
     tags: ['Figma Plugin', 'Dev Handoff', 'Productivity'],
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
@@ -28,66 +26,53 @@ const projects = [
     name: 'Context Keeper',
     href: 'https://shorturl.at/UFOhN',
     label: 'Add to Chrome',
-
-    desc: 'Save and restore full work contexts—tabs, tools, and state—in one click. Eliminate context switching loss and stay in flow across projects.',
+    desc: 'Save and restore full work contexts - tabs, tools, and state - in one click. Eliminate context switching loss and stay in flow across projects.',
     tags: ['Browser Extension', 'Productivity', 'Tool'],
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
-  <path fill="url(#a)" d="M0 0h200v120H0z"/>
-  <g filter="url(#b)">
-    <path fill="#fff" d="M75.5 35H138v37.5H75.5z"/>
-  </g>
-  <g filter="url(#c)">
-    <path fill="#fff" d="M69.25 41.25h62.5v37.5h-62.5z"/>
-  </g>
-  <g filter="url(#d)">
-    <path fill="#fff" d="M63 47.5h62.5V85H63z"/>
-  </g>
+  <path fill="url(#ctx-a)" d="M0 0h200v120H0z"/>
+  <g filter="url(#ctx-b)"><path fill="#fff" d="M75.5 35H138v37.5H75.5z"/></g>
+  <g filter="url(#ctx-c)"><path fill="#fff" d="M69.25 41.25h62.5v37.5h-62.5z"/></g>
+  <g filter="url(#ctx-d)"><path fill="#fff" d="M63 47.5h62.5V85H63z"/></g>
   <defs>
-    <filter id="b" width="102.5" height="77.5" x="58.5" y="15" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+    <filter id="ctx-b" width="102.5" height="77.5" x="58.5" y="15" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-      <feOffset dx="3"/>
-      <feGaussianBlur stdDeviation="10"/>
+      <feOffset dx="3"/><feGaussianBlur stdDeviation="10"/>
       <feComposite in2="hardAlpha" operator="out"/>
       <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
       <feBlend in2="BackgroundImageFix" mode="luminosity" result="effect1_dropShadow_2292_22441"/>
       <feBlend in="SourceGraphic" in2="effect1_dropShadow_2292_22441" result="shape"/>
     </filter>
-    <filter id="c" width="102.5" height="77.5" x="52.25" y="21.25" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+    <filter id="ctx-c" width="102.5" height="77.5" x="52.25" y="21.25" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-      <feOffset dx="3"/>
-      <feGaussianBlur stdDeviation="10"/>
+      <feOffset dx="3"/><feGaussianBlur stdDeviation="10"/>
       <feComposite in2="hardAlpha" operator="out"/>
       <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
       <feBlend in2="BackgroundImageFix" mode="luminosity" result="effect1_dropShadow_2292_22441"/>
       <feBlend in="SourceGraphic" in2="effect1_dropShadow_2292_22441" result="shape"/>
     </filter>
-    <filter id="d" width="102.5" height="77.5" x="46" y="27.5" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
+    <filter id="ctx-d" width="102.5" height="77.5" x="46" y="27.5" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>
       <feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-      <feOffset dx="3"/>
-      <feGaussianBlur stdDeviation="10"/>
+      <feOffset dx="3"/><feGaussianBlur stdDeviation="10"/>
       <feComposite in2="hardAlpha" operator="out"/>
       <feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
       <feBlend in2="BackgroundImageFix" mode="luminosity" result="effect1_dropShadow_2292_22441"/>
       <feBlend in="SourceGraphic" in2="effect1_dropShadow_2292_22441" result="shape"/>
     </filter>
-    <linearGradient id="a" x1="21" x2="169.5" y1="0" y2="120" gradientUnits="userSpaceOnUse">
+    <linearGradient id="ctx-a" x1="21" x2="169.5" y1="0" y2="120" gradientUnits="userSpaceOnUse">
       <stop stop-color="#4C4EFF"/>
       <stop offset="1" stop-color="#3739FF"/>
     </linearGradient>
   </defs>
-</svg>
-
-`,
+</svg>`,
   },
-   {
+  {
     id: 'tablo',
     name: 'Tablo',
     href: '',
     label: 'Coming Soon',
-
     desc: 'Smart tables for real data in Figma. Paste CSV, Sheets, or text and instantly generate structured, styled, production-ready tables with auto alignment and themes.',
     tags: ['Figma Plugin', 'Data UI', 'Productivity'],
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
@@ -109,7 +94,6 @@ const projects = [
     name: 'Design System',
     href: 'https://shorturl.at/r2cnb',
     label: 'View Design System',
-
     desc: 'Production-ready design system with tokens, semantic layers, and components. Built for consistency, scalability, and seamless designer–developer workflows.',
     tags: ['Design System', 'Tokens', 'Components'],
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
@@ -133,17 +117,12 @@ const projects = [
     name: 'Fence App',
     href: 'https://www.npmjs.com/package/create-fence-app',
     label: 'Get Started',
-
     desc: 'Design memory for AI-assisted UIs. Maintains consistency across screens, enforcing structure and brand logic while building interfaces with AI tools.',
-    tags: ['CLI','AI Tools', 'Productivity', 'Dev tool'],
+    tags: ['CLI', 'AI Tools', 'Productivity', 'Dev tool'],
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
   <path fill="#323A45" d="M0 0h200v120H0z"/>
-  <g filter="url(#fence-a)">
-    <path stroke="#fff" d="M55.5 49.5h89v5h-89z" shape-rendering="crispEdges"/>
-  </g>
-  <g filter="url(#fence-b)">
-    <path stroke="#fff" d="M55.5 65.5h89v5h-89z" shape-rendering="crispEdges"/>
-  </g>
+  <g filter="url(#fence-a)"><path stroke="#fff" d="M55.5 49.5h89v5h-89z" shape-rendering="crispEdges"/></g>
+  <g filter="url(#fence-b)"><path stroke="#fff" d="M55.5 65.5h89v5h-89z" shape-rendering="crispEdges"/></g>
   <path fill="#323A45" d="M61.5 35.5h11v49h-11z"/>
   <path stroke="#fff" d="M61.5 35.5h11v49h-11zm22 0h11v49h-11z"/>
   <path fill="#323A45" d="M105.5 35.5h11v49h-11z"/>
@@ -175,21 +154,18 @@ const projects = [
     name: 'OpenMRS',
     href: 'https://github.com/monfortbrian/vaccine-pipeline',
     label: 'Explore',
-
     desc: 'Verified n8n node and TypeScript SDK for OpenMRS. Search patients by name or ID, access clinical records, and automate healthcare workflows without complex API setup.',
-    tags: ['Healthcare', 'Automation','Open Source'],
+    tags: ['Healthcare', 'Automation', 'Open Source'],
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
   <path fill="#fff" d="M0 0h200v120H0z"/>
-  <g clip-path="url(#a)">
+  <g clip-path="url(#openmrs-a)">
     <path fill="#F26522" d="M84.034 44.08a22.595 22.595 0 0 1 16.003-6.61 22.588 22.588 0 0 1 15.97 6.579l.016-15.03a34.904 34.904 0 0 0-15.986-3.851c-5.762 0-11.228 1.565-16.021 4.028l.017 14.884Z"/>
     <path fill="#EEA616" d="M116.023 75.975a22.583 22.583 0 0 1-16.001 6.608 22.6 22.6 0 0 1-15.97-6.578l-.019 15.03a34.909 34.909 0 0 0 15.989 3.85 34.88 34.88 0 0 0 15.989-3.852l.012-15.058Z"/>
     <path fill="#5B57A6" d="M84.066 75.993c-4.095-4.083-6.629-9.723-6.629-15.957 0-6.216 2.522-11.846 6.597-15.93l-15.07-.015a34.666 34.666 0 0 0-3.86 15.945 34.643 34.643 0 0 0 3.862 15.947l15.1.01Z"/>
     <path fill="#009384" d="M116.014 44.048a22.462 22.462 0 0 1 6.628 15.96 22.459 22.459 0 0 1-6.598 15.926l15.072.018a34.643 34.643 0 0 0 3.86-15.944c0-5.747-1.392-11.17-3.862-15.95l-15.1-.01Z"/>
   </g>
   <defs>
-    <clipPath id="a">
-      <path fill="#fff" d="M65 25h70v70H65z"/>
-    </clipPath>
+    <clipPath id="openmrs-a"><path fill="#fff" d="M65 25h70v70H65z"/></clipPath>
   </defs>
 </svg>`,
   },
@@ -198,9 +174,8 @@ const projects = [
     name: 'SEO Advisor',
     href: 'https://github.com/monfortbrian/sentra-cold-chain-monitoring',
     label: 'Add to Chrome',
-
     desc: 'Analyze ecommerce pages and detect SEO issues affecting rankings. Get prioritized fixes for metadata, schema, and content with actionable insights.',
-    tags: ['Browser Extension','SEO', 'Analytics', 'Ecommerce'],
+    tags: ['Browser Extension', 'SEO', 'Analytics', 'Ecommerce'],
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
   <path fill="#000" d="M0 0h200v120H0z"/>
   <path stroke="#fff" stroke-miterlimit="10" stroke-width="3" d="M99.878 84.86c-13.664 0-24.735-11.078-24.735-24.736 0-13.66 11.076-24.736 24.735-24.736"/>
@@ -210,73 +185,28 @@ const projects = [
   <path stroke="#fff" stroke-miterlimit="10" stroke-width="2" d="M65 60.124h27.456"/>
   <path fill="#000" d="M101.4 33h-3v5h3v-5Z"/>
   <path stroke="#fff" stroke-miterlimit="10" stroke-width="2" d="M107.545 60.124h27.456m-35.124-7.668V25m0 70V67.544"/>
-</svg>
-`,
+</svg>`,
   },
   {
     id: 'analytics_pipeline',
     name: 'Analytics Pipeline',
     href: 'https://dev.to/monfortbrian_/how-i-built-an-automated-operational-analytics-pipeline-from-a-queue-management-system-ecc',
     label: 'Read Case Study',
-
     desc: 'End-to-end analytics pipeline transforming raw queue data into automated dashboards, reports, and insights for real-time operational decision-making.',
     tags: ['Automation', 'Analytics', 'Pipeline'],
     svg: `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="120" fill="none" viewBox="0 0 200 120">
-  <path fill="url(#a)" d="M0 0h200v120H0z"/>
-  <g clip-path="url(#b)">
-    <mask id="c" width="109" height="66" x="43" y="34" maskUnits="userSpaceOnUse" style="mask-type:luminance">
-      <path fill="#fff" d="M151.15 34.02H43.9V100h107.25V34.02Z"/>
-    </mask>
-    <g mask="url(#c)">
-      <path stroke="#F2F3F5" stroke-width="5" d="M53.364 35.59h88.324c.871 0 1.577.704 1.577 1.572v58.125H51.787V37.162c0-.868.706-1.571 1.577-1.571Z"/>
-      <path fill="#E2E4E5" d="M43.9 96.857h107.25v1.257a1.889 1.889 0 0 1-1.892 1.885H45.793a1.889 1.889 0 0 1-1.893-1.885v-1.257Z"/>
-      <path fill="#AAA" d="M83.644 96.857h28.39c0 .695-.564 1.257-1.262 1.257H84.906a1.26 1.26 0 0 1-1.262-1.257Z"/>
-    </g>
+  <path fill="url(#pipe-a)" d="M0 0h200v120H0z"/>
+  <g clip-path="url(#pipe-b)">
     <path fill="#fff" d="M90.977 82.887h20.109a.775.775 0 0 0 .773-.773V59.69h-5.414a2.323 2.323 0 0 1-2.32-2.32v-5.41H90.977a.776.776 0 0 0-.774.773v29.382c0 .425.348.773.774.773Z"/>
-    <path fill="#fff" d="m110.766 58.144-5.094-5.092v4.319c0 .425.348.773.773.773h4.321Z"/>
-    <path fill="#F2F3F5" d="m112.726 57.918-6.828-6.827a2.336 2.336 0 0 0-1.64-.679H90.977c-1.28 0-2.32 1.04-2.32 2.32v29.381a2.323 2.323 0 0 0 2.32 2.32h20.109a2.323 2.323 0 0 0 2.32-2.32V59.557a2.3 2.3 0 0 0-.68-1.639Zm-7.054-4.866 5.094 5.092h-4.321a.774.774 0 0 1-.773-.773v-4.32Zm5.414 29.834h-20.11a.775.775 0 0 1-.773-.773V52.732c0-.425.348-.773.774-.773h13.148v5.412a2.323 2.323 0 0 0 2.32 2.32h5.414v22.422a.775.775 0 0 1-.773.773Z" opacity=".64"/>
-    <path fill="#C8C6C4" d="M97.938 75.155h11.601a.774.774 0 0 0 0-1.547H97.937v1.547Zm0 3.093h11.601a.774.774 0 0 0 0-1.547H97.937v1.547Z"/>
-    <path stroke="#C8C6C4" stroke-miterlimit="10" d="m98.375 68.44 3.284-2.42m2.852.107 2.096 2.314m1.385 2.849a1.547 1.547 0 1 0 0-3.095 1.547 1.547 0 0 0 0 3.094Zm-4.64-4.64a1.546 1.546 0 1 0 0-3.093 1.546 1.546 0 0 0 0 3.092Z"/>
     <path fill="#F2C80F" d="M82.469 78.247h15.469a1.547 1.547 0 0 0 1.546-1.546V61.237a1.546 1.546 0 0 0-1.546-1.547h-15.47a1.546 1.546 0 0 0-1.546 1.547V76.7a1.546 1.546 0 0 0 1.547 1.546Z"/>
     <path fill="#333" d="M92.523 64.33a.774.774 0 0 0-.773.773v7.732a.773.773 0 0 0 1.547 0v-7.732a.773.773 0 0 0-.774-.773Zm-3.093 2.32a.774.774 0 0 0-.774.773v5.412a.773.773 0 0 0 1.547 0v-5.412a.773.773 0 0 0-.773-.773Zm-3.094 2.32a.774.774 0 0 0-.773.772v3.093a.773.773 0 0 0 1.546 0v-3.093a.773.773 0 0 0-.773-.773Z"/>
-    <mask id="d" width="33" height="33" x="133" y="20" maskUnits="userSpaceOnUse" style="mask-type:luminance">
-      <path fill="#fff" d="M166 20h-33v32.99h33V20Z"/>
-    </mask>
-    <g mask="url(#d)">
-      <path fill="#D1E2FA" d="M164.02 20h-29.04a1.98 1.98 0 0 0-1.98 1.98v29.03a1.98 1.98 0 0 0 1.98 1.98h29.04a1.98 1.98 0 0 0 1.98-1.98V21.98a1.98 1.98 0 0 0-1.98-1.98Z"/>
-      <path stroke="#4484F3" stroke-linecap="round" stroke-width="3" d="m136.961 48.7 4.452-6.358a.33.33 0 0 1 .426-.102l4.462 2.379a.329.329 0 0 0 .402-.073l4.713-5.338a.325.325 0 0 1 .16-.1l7.038-1.92a.328.328 0 0 0 .195-.146l4.552-7.476"/>
-      <path fill="#FAFAFA" d="M155.111 24.618h-17.82a.99.99 0 1 0 0 1.98h17.82a.99.99 0 1 0 0-1.98Zm-5.61 2.64h-12.54a.66.66 0 1 0 0 1.32h12.54a.66.66 0 0 0 0-1.32Z"/>
-    </g>
-    <mask id="e" width="29" height="30" x="34" y="61" maskUnits="userSpaceOnUse" style="mask-type:luminance">
-      <path fill="#fff" d="M62.875 61.237H34v28.866h28.875V61.237Z"/>
-    </mask>
-    <g mask="url(#e)">
-      <path fill="#CCE8D5" d="M61.3 61.237H35.575c-.87 0-1.575.705-1.575 1.575v25.717c0 .87.705 1.574 1.575 1.574H61.3c.87 0 1.575-.705 1.575-1.574V62.812c0-.87-.705-1.575-1.575-1.575Z"/>
-      <path fill="#0D632C" d="M58.674 67.535H57.1a.525.525 0 0 0-.525.525v19.944c0 .29.235.525.525.525h1.575c.29 0 .525-.235.525-.525V68.06a.525.525 0 0 0-.525-.525Z"/>
-      <path fill="#32A752" d="M47.65 76.457h-1.574a.525.525 0 0 0-.525.525v11.021c0 .29.235.525.525.525h1.575c.29 0 .525-.235.525-.525V76.982a.525.525 0 0 0-.525-.525Z"/>
-      <path fill="#32A650" d="M54.998 70.16h-1.575a.525.525 0 0 0-.525.525v17.32c0 .29.235.524.525.524h1.575c.29 0 .525-.235.525-.525v-17.32a.525.525 0 0 0-.525-.524Z"/>
-      <path fill="#2FAA51" d="M43.975 80.656H42.4a.525.525 0 0 0-.525.525v6.823c0 .29.235.525.525.525h1.575c.29 0 .525-.235.525-.525v-6.823a.525.525 0 0 0-.525-.525Z"/>
-      <path fill="#32A750" d="M51.325 73.833H49.75a.525.525 0 0 0-.525.525v13.646c0 .29.235.524.525.524h1.575c.29 0 .525-.235.525-.524V74.358a.525.525 0 0 0-.525-.525Z"/>
-      <path fill="#37A454" d="M40.301 86.43h-1.575a.525.525 0 0 0-.525.525v1.05c0 .289.235.524.525.524h1.575c.29 0 .525-.235.525-.525v-1.05a.525.525 0 0 0-.525-.524Z"/>
-      <path fill="#FAFAFA" d="M51.587 64.911H37.412a.787.787 0 1 0 0 1.575h14.175a.787.787 0 1 0 0-1.575Zm-4.462 2.099H37.15a.525.525 0 1 0 0 1.05h9.975a.525.525 0 1 0 0-1.05Z"/>
-    </g>
-    <mask id="f" width="17" height="18" x="66" y="24" maskUnits="userSpaceOnUse" style="mask-type:luminance">
-      <path fill="#fff" d="M82.676 24.948h-16.5v16.495h16.5V24.948Z"/>
-    </mask>
-    <g mask="url(#f)">
-      <path fill="#8688F3" d="M81.686 24.948h-14.52a.99.99 0 0 0-.99.99v14.515c0 .547.443.99.99.99h14.52a.99.99 0 0 0 .99-.99V25.938a.99.99 0 0 0-.99-.99Z"/>
-      <path fill="#fff" d="M76.166 32.371h-3.808c-.088 0-.159.057-.159.127v3.045c0 .07.071.127.159.127h3.808c.087 0 .158-.057.158-.127v-3.045c0-.07-.07-.127-.158-.127Z"/>
-      <path stroke="#fff" stroke-width=".7" d="M74.262 30.095c.71 0 1.287.576 1.287 1.287v3.595h-2.574v-3.595c0-.711.576-1.287 1.287-1.287Z"/>
-    </g>
   </g>
   <defs>
-    <linearGradient id="a" x1="100" x2="100" y1="0" y2="120" gradientUnits="userSpaceOnUse">
+    <linearGradient id="pipe-a" x1="100" x2="100" y1="0" y2="120" gradientUnits="userSpaceOnUse">
       <stop stop-color="#6366F1"/>
       <stop offset="1" stop-color="#393B8B"/>
     </linearGradient>
-    <clipPath id="b">
-      <path fill="#fff" d="M34 20h132v80H34z"/>
-    </clipPath>
+    <clipPath id="pipe-b"><path fill="#fff" d="M34 20h132v80H34z"/></clipPath>
   </defs>
 </svg>`,
   },
@@ -311,42 +241,45 @@ const writing = [
 ];
 
 const pills = [
-  /* top row - left */
   { label: 'UX Strategy', top: '6%', left: '2%', rotate: -8 },
-  /* top row - center */
   { label: 'Product Design', top: '4%', left: '36%', rotate: 5 },
-  /* top row - right */
   { label: 'Design Systems', top: '8%', left: '66%', rotate: 10 },
-
-  /* mid row - left edge */
   { label: 'User Interface', top: '40%', left: '11%', rotate: -15 },
-  /* mid row - right edge */
   { label: 'Browser Extensions', top: '38%', left: '64%', rotate: -12 },
-
-  /* lower row - left */
   { label: 'Prototyping', top: '66%', left: '3%', rotate: 7 },
-  /* lower row - center */
   { label: 'Figma Plugins', top: '65%', left: '38%', rotate: -5 },
-  /* lower row - right */
   { label: 'Pitch Deck Design', top: '68%', left: '63%', rotate: 8 },
-
-  /* bottom - only shows on taller mobile containers */
-  { label: 'Automation & AI Systems', top: '84%', left: '30%', rotate: 12 },
+  { label: 'Automation & AI', top: '84%', left: '30%', rotate: 12 },
 ];
 ---
 
 <Base>
   <div class='col'>
     <!-- Hero -->
-    <section class='hero'>
+    <section class='hero' aria-label='Introduction'>
       <div class='hero-top'>
         <div class='avatar'>
-          <img src='/avatar.png' alt='Brian' />
+          <img
+            src='/avatar.png'
+            alt='Monfort Brian'
+            width='80'
+            height='80'
+            loading='eager'
+            decoding='async'
+          />
         </div>
       </div>
 
       <div class='hero-name'>Monfort Brian N. | 宁俊</div>
-      <div class='hero-tag'> <a href='https://linkedin.com/in/monfortbrian' target='_blank' rel='noopener'>Product Designer — Design Engineer.</a></div>
+      <div class='hero-tag'>
+        <a
+          href='https://linkedin.com/in/monfortbrian'
+          target='_blank'
+          rel='noopener'
+        >
+          Product Design Engineer
+        </a>
+      </div>
 
       <div class='hero-bio'>
         <p>
@@ -356,10 +289,12 @@ const pills = [
           <a
             href='https://npmjs.com/~monfortbrian'
             target='_blank'
-            rel='noopener'>OSS contributor</a
-          >{' '}
+            rel='noopener'
+          >
+            OSS contributor
+          </a>{' '}
           building tools that connect and stay accessible. Partnered with Silicon
-          Valley startups & unicorns.
+          Valley startups &amp; unicorns.
         </p>
       </div>
 
@@ -419,17 +354,12 @@ const pills = [
       </div>
     </section>
 
-    <!-- ── Skills ─────────────────────────────────────── -->
+    <!-- Skills -->
     <section class='bring-section' aria-label='Skills'>
       <div class='section-title'>What I bring to the table</div>
-      <!--
-        .section-subtitle: display:none on desktop (pills are visible immediately).
-        display:block on mobile ≤500px - mirrors hero-tag style exactly.
-      -->
       <div class='section-subtitle'>
         Digital experiences and systems that engage users and help you stand out
       </div>
-
       <div
         class='bring-inner'
         id='bring-container'
@@ -444,102 +374,107 @@ const pills = [
               data-origin-left={p.left}
               data-rotate={p.rotate}
               tabindex='0'
-              role='listitem'
             >
               {p.label}
             </div>
           ))
         }
-        <!-- Desktop: faint center hint only (subtitle is hidden, pills fill zone) -->
-        <!-- Mobile:  this hint is hidden too - subtitle above does the job       -->
         <div class='bring-center' aria-hidden='true'>
-          <div class='bring-sub'>
-            Digital experiences and systems that engage users and help you stand
-            out
-          </div>
+          <div class='bring-sub'>drag to explore</div>
         </div>
       </div>
     </section>
 
-    <!-- ── Projects ───────────────────────────────────── -->
     <section class='section' aria-label='Projects'>
-      <div class='section-title'>A small selection of my work</div>
-      <div class='projects-grid'>
+      <div class='section-title'>Some of my works</div>
+      <div class='projects-grid' aria-label='Project cards'>
         {
           projects.map((p) => (
             <button
               class='project-card'
               data-project={p.id}
-              aria-label={`Open ${p.name} details`}
+              aria-label={`View ${p.name} - ${p.tags[0]}`}
               type='button'
             >
               <div class='project-card-inner'>
                 <div class='project-card-svg-wrap' set:html={p.svg} />
               </div>
-              <div class='project-card-name'>{p.name}</div>
+              <div class='project-card-name' aria-hidden='true'>
+                {p.name}
+              </div>
             </button>
           ))
         }
       </div>
     </section>
 
-    <!-- ── Case Studies ───────────────────────────────── -->
+    <!-- Case Studies -->
+
     <section class='section' aria-label='Case studies'>
       <div class='section-title'>Case Studies</div>
-      <div role='list'>
+      <ul style='list-style:none;padding:0;margin:0;'>
         {
           caseStudies.map((c) => (
-            <a href={`/work/${c.slug}`} class='list-row' role='listitem'>
-              <div class='list-thumb' style={`background:${c.fallbackBg};`}>
-                <img
-                  src={c.image}
-                  alt=''
-                  loading='lazy'
-                  onerror="this.style.display='none'"
-                />
-              </div>
-              <div class='list-info'>
-                <div class='list-title'>{c.title}</div>
-                <div class='list-date'>{c.date}</div>
-              </div>
-            </a>
+            <li>
+              <a href={`/work/${c.slug}`} class='list-row'>
+                <div class='list-thumb' style={`background:${c.fallbackBg};`}>
+                  <img
+                    src={c.image}
+                    alt={c.title}
+                    width='48'
+                    height='36'
+                    loading='lazy'
+                    decoding='async'
+                    onerror="this.style.display='none'"
+                  />
+                </div>
+                <div class='list-info'>
+                  <div class='list-title'>{c.title}</div>
+                  <div class='list-date'>{c.date}</div>
+                </div>
+              </a>
+            </li>
           ))
         }
-      </div>
+      </ul>
     </section>
 
-    <!-- ── Writing ────────────────────────────────────── -->
+    <!-- Writing -->
     <section class='section' aria-label='Writing'>
       <div class='section-title'>Writing</div>
-      <div role='list'>
+      <ul style='list-style:none;padding:0;margin:0;'>
         {
           writing.map((w) => (
-            <a
-              href={w.href || `/blog/${w.slug}`}
-              class='list-row'
-              role='listitem'
-              target={w.href ? '_blank' : undefined}
-              rel={w.href ? 'noopener noreferrer' : undefined}
-            >
-              <div class='list-thumb' style={`background:${w.fallbackBg};`}>
-                <img
-                  src={w.image}
-                  alt=''
-                  loading='lazy'
-                  onerror="this.style.display='none'"
-                />
-              </div>
-              <div class='list-info'>
-                <div class='list-title'>{w.title}</div>
-                <div class='list-date'>{w.date}</div>
-              </div>
-            </a>
+            <li>
+              <a
+                href={w.href || `/blog/${w.slug}`}
+                class='list-row'
+                target={w.href ? '_blank' : undefined}
+                rel={w.href ? 'noopener noreferrer' : undefined}
+              >
+                <div class='list-thumb' style={`background:${w.fallbackBg};`}>
+                  <img
+                    src={w.image}
+                    alt={w.title}
+                    width='48'
+                    height='36'
+                    loading='lazy'
+                    decoding='async'
+                    onerror="this.style.display='none'"
+                  />
+                </div>
+                <div class='list-info'>
+                  <div class='list-title'>{w.title}</div>
+                  <div class='list-date'>{w.date}</div>
+                </div>
+              </a>
+            </li>
           ))
         }
-      </div>
+      </ul>
     </section>
 
-    <!-- ── Footer ─────────────────────────────────────── -->
+    <!-- Footer -->
     <footer class='footer'>
       <div class='footer-inner'>
         <div class='footer-links'>
@@ -548,44 +483,58 @@ const pills = [
             target='_blank'
             rel='noopener'>GitHub</a
           >
-          <a href='https://linkedin.com/in/monfortbrian' target='_blank' rel='noopener'
-            >LinkedIn</a
+          <a
+            href='https://linkedin.com/in/monfortbrian'
+            target='_blank'
+            rel='noopener'>LinkedIn</a
           >
           <a
             href='https://dribbble.com/monfortbrian'
             target='_blank'
             rel='noopener'>Dribbble</a
           >
-          <a href='https://www.dropbox.com/scl/fi/duhkk123bzrmtxg4jbgrb/Monfort-N.-Brian-CV-Product-Design-Engineer.pdf?rlkey=jm3dksmv8w4szb3x2eszz0btc&st=j8iupkl1&dl=0' target='_blank' rel='noopener'
-            >Resume</a
-          >
-        </div>
-        <div class='theme-toggle' role='group' aria-label='Color theme'>
-          <button
-            class='theme-btn'
-            data-theme-val='light'
-            aria-label='Light mode'><Sun size={14} /></button
-          >
-          <button
-            class='theme-btn active'
-            data-theme-val='system'
-            aria-label='System mode'><LaptopMinimal size={14} /></button
-          >
-          <button class='theme-btn' data-theme-val='dark' aria-label='Dark mode'
-            ><Moon size={14} /></button
+          <a
+            href='https://www.dropbox.com/scl/fi/duhkk123bzrmtxg4jbgrb/Monfort-N.-Brian-CV-Product-Design-Engineer.pdf?rlkey=jm3dksmv8w4szb3x2eszz0btc&st=j8iupkl1&dl=0'
+            target='_blank'
+            rel='noopener'>Resume</a
           >
         </div>
       </div>
     </footer>
   </div>
 
-  <!-- ── Project Modal ──────────────────────────────── -->
+  <!-- Floating theme toggle - outside .col, fixed position -->
+  <div class='theme-float' role='group' aria-label='Color theme'>
+    <button
+      class='theme-btn'
+      data-theme-val='light'
+      aria-label='Switch to light mode'
+    >
+      <Sun size={14} />
+    </button>
+    <button
+      class='theme-btn active'
+      data-theme-val='system'
+      aria-label='Use system theme'
+    >
+      <LaptopMinimal size={14} />
+    </button>
+    <button
+      class='theme-btn'
+      data-theme-val='dark'
+      aria-label='Switch to dark mode'
+    >
+      <Moon size={14} />
+    </button>
+  </div>
+
+  <!-- Project Modal -->
   <div
     class='modal-backdrop'
     id='modal'
     role='dialog'
     aria-modal='true'
-    aria-label='Project details'
+    aria-labelledby='modal-name'
   >
     <div class='modal'>
       <button
@@ -620,7 +569,7 @@ const pills = [
   </div>
 
   <script define:vars={{ projects }}>
-    /* ── Theme ──────────────────────────────────────── */
+    /* Theme */
     const root = document.documentElement;
     const themeBtns = document.querySelectorAll('.theme-btn');
 
@@ -648,9 +597,8 @@ const pills = [
         if (localStorage.getItem('theme') === 'system') applyTheme('system');
       });
 
-    /* ── Draggable Pills ────────────────────────────── */
+    /* Draggable Pills */
     const container = document.getElementById('bring-container');
-
     container.querySelectorAll('.pill').forEach((pill) => {
       let dragging = false,
         startX,
@@ -672,9 +620,7 @@ const pills = [
             : parseFloat(ol),
         };
       }
-      function clamp(v, lo, hi) {
-        return Math.max(lo, Math.min(hi, v));
-      }
+      const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
 
       pill.addEventListener('mousedown', (e) => {
         dragging = true;
@@ -768,7 +714,7 @@ const pills = [
       });
     });
 
-    /* ── Project Modal ──────────────────────────────── */
+    /* Modal */
     const modal = document.getElementById('modal');
     const mIcon = document.getElementById('modal-icon');
     const mName = document.getElementById('modal-name');
@@ -792,8 +738,10 @@ const pills = [
       mTags.innerHTML = p.tags
         .map((t) => `<span class="modal-tag">${t}</span>`)
         .join('');
-      mLink.href = p.href;
+      mLink.href = p.href || '#';
       mLinkLabel.textContent = p.label;
+      /* hide link if no href (Coming Soon cards) */
+      mLink.style.display = p.href ? '' : 'none';
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
       document.getElementById('modal-close').focus();
