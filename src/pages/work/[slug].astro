@@ -6,6 +6,8 @@ export async function getStaticPaths() {
     {
       slug: 'regiq',
       title: 'RegIQ: Building Regulatory Intelligence for East African Banks',
+      description:
+        'How I built a RAG pipeline over 26 BNR directive PDFs, cutting compliance query time from 25 minutes to under 30 seconds.',
       date: '2025',
       tags: [
         'RAG',
@@ -28,29 +30,21 @@ export async function getStaticPaths() {
           <h2>The problem</h2>
           <p>Compliance officers at Rwandan banks spend 15–25 minutes per question manually searching BNR directive PDFs. With 26 directives across 10 years, no indexed, searchable system existed. Every lookup meant downloading a PDF, running Ctrl+F, reading context, and cross-referencing other directives.</p>
         </section>
-
         <section id="built">
           <h2>What I built</h2>
           <p>RegIQ is a RAG pipeline over the full National Bank of Rwanda directive corpus - 19 directives, article-level chunking, with directive number, article title, chapter, and page preserved as metadata on every chunk.</p>
           <p>Scanned PDFs (the majority of African central bank documents) are handled via GPT-4o Vision OCR with table extraction. Clean PDFs use PyMuPDF with layout-aware parsing.</p>
-          <figure>
-            <img src="/work/regiq-architecture.png" alt="RegIQ system architecture diagram" loading="lazy" />
-            <figcaption>System architecture - ingestion pipeline to Chrome extension</figcaption>
-          </figure>
         </section>
-
         <section id="architecture">
           <h2>Architecture</h2>
           <p>The pipeline runs in three stages: ingestion (PDF → chunks → ChromaDB), retrieval (hybrid BM25 + vector search), and generation (GPT-4o with citation-aware prompting).</p>
           <p>The Chrome extension intercepts the user's query, hits the FastAPI endpoint, and renders the answer inline with directive citations and confidence scores.</p>
         </section>
-
         <section id="design">
           <h2>Design decisions</h2>
           <p>Article-level chunking (not page-level) was the critical choice. Regulatory language is precise - splitting mid-article destroys context. This alone improved retrieval relevance from ~60% to ~91% on the eval set.</p>
-          <p>Metadata filtering lets users scope queries to a specific directive year or directive number, cutting hallucination risk significantly.</p>
+          <p>Metadata filtering lets users scope queries to a specific directive year or number, cutting hallucination risk significantly.</p>
         </section>
-
         <section id="results">
           <h2>Results</h2>
           <p>Query time dropped from 15–25 minutes to under 30 seconds. Tested across 3 compliance officers at a Rwandan commercial bank over 2 weeks.</p>
@@ -60,17 +54,12 @@ export async function getStaticPaths() {
             <li>Chrome extension deployed internally</li>
           </ul>
         </section>
-
         <section id="links">
           <h2>Links</h2>
           <div class="case-links">
             <a href="https://github.com/monfortbrian" class="case-link" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
               GitHub Repository
-            </a>
-            <a href="https://www.behance.net/" class="case-link" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 1.202.791 1.86 1.865 1.86.664 0 1.196-.38 1.32-.9h3.571zm-3.554-3.14c-.08-1.027-.596-1.86-1.77-1.86-1.176 0-1.77.896-1.863 1.86h3.633zM8.516 12c1.293 0 1.904.867 1.904 2.157 0 1.268-.688 2.018-1.904 2.018H5.344V12h3.172zM0 19.125V5h8.391c2.801 0 4.77 1.145 4.77 3.838 0 1.332-.685 2.414-1.822 2.967 1.506.535 2.403 1.717 2.403 3.405C13.742 17.93 12.083 19.125 9.17 19.125H0zM5.344 9.5v2.143h2.434c.836 0 1.338-.453 1.338-1.073C9.116 9.94 8.614 9.5 7.778 9.5H5.344z"/></svg>
-              Behance Case Study
             </a>
           </div>
         </section>
@@ -79,6 +68,8 @@ export async function getStaticPaths() {
     {
       slug: 'opsbot',
       title: 'OpsBot: AI Operations Intelligence Across Two Industries',
+      description:
+        'A Slack-native AI assistant that aggregates operational data, generates natural-language summaries, and surfaces anomalies automatically.',
       date: '2024',
       tags: ['Python', 'OpenAI', 'Slack', 'n8n', 'PostgreSQL'],
       sections: [
@@ -90,7 +81,7 @@ export async function getStaticPaths() {
       content: `
         <section id="problem">
           <h2>The problem</h2>
-          <p>Operations teams at two different companies were drowning in manual reporting - pulling data from 4–6 systems daily to produce status reports nobody had time to read.</p>
+          <p>Operations teams at two companies were drowning in manual reporting - pulling data from 4–6 systems daily to produce status reports nobody had time to read.</p>
         </section>
         <section id="built">
           <h2>What I built</h2>
@@ -103,10 +94,7 @@ export async function getStaticPaths() {
         <section id="links">
           <h2>Links</h2>
           <div class="case-links">
-            <a href="https://github.com/monfortbrian" class="case-link" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-              GitHub
-            </a>
+            <a href="https://github.com/monfortbrian" class="case-link" target="_blank" rel="noopener">GitHub</a>
           </div>
         </section>
       `,
@@ -114,6 +102,8 @@ export async function getStaticPaths() {
     {
       slug: 'qms-pipeline',
       title: 'QMS Data Pipeline: From Queue System to Executive Dashboard',
+      description:
+        'An automated ETL pipeline turning siloed queue management data into live Power BI executive dashboards with SLA tracking.',
       date: '2024',
       tags: ['Python', 'PostgreSQL', 'Power BI', 'ETL', 'REST API'],
       sections: [
@@ -138,10 +128,7 @@ export async function getStaticPaths() {
         <section id="links">
           <h2>Links</h2>
           <div class="case-links">
-            <a href="https://dev.to/monfortbrian_/how-i-built-an-automated-operational-analytics-pipeline-from-a-queue-management-system-ecc" class="case-link" target="_blank" rel="noopener">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7.42 10.05c-.18-.16-.46-.23-.84-.23H6l.02 2.44.04 2.45.56-.02c.41 0 .63-.07.83-.26.24-.24.26-.36.26-2.2 0-1.91-.02-1.96-.29-2.18zM0 4.94v14.12h24V4.94H0zM8.56 15.3c-.44.58-1.06.77-2.53.77H4.71V8.53h1.4c1.67 0 2.16.18 2.6.9.27.43.29.6.32 2.57.05 2.23-.02 2.73-.47 3.3zm5.09-5.47h-2.47v1.77h1.52v1.28l-.72.04-.75.03v1.77l1.22.03 1.2.04v1.28h-1.6c-1.53 0-1.6-.01-1.87-.3l-.3-.28v-3.16c0-3.02.01-3.18.25-3.48.23-.31.25-.31 1.88-.31h1.64v1.29zm4.68 5.45c-.17.43-.64.79-1 .79-.18 0-.45-.15-.67-.39-.32-.32-.45-.63-.82-2.08l-.9-3.39-.45-1.67h.76c.4 0 .75.02.75.05 0 .06 1.16 4.54 1.26 4.83.04.15.32-.7.73-2.3l.66-2.52.74-.04c.4-.02.73 0 .73.04 0 .14-1.67 6.38-1.8 6.68z"/></svg>
-              Read on dev.to
-            </a>
+            <a href="https://dev.to/monfortbrian_/how-i-built-an-automated-operational-analytics-pipeline-from-a-queue-management-system-ecc" class="case-link" target="_blank" rel="noopener">Read on dev.to</a>
           </div>
         </section>
       `,
@@ -154,24 +141,29 @@ export async function getStaticPaths() {
   }));
 }
 
-const { title, date, tags, sections, content } = Astro.props;
+const { title, description, date, tags, sections, content } = Astro.props;
 ---
 
-<Base title={title}>
-  <!-- Reading progress bar -->
-  <div class='progress-bar' id='progress-bar'></div>
+<Base title={title} description={description}>
+  <div
+    class='progress-bar'
+    id='progress-bar'
+    role='progressbar'
+    aria-label='Reading progress'
+  >
+  </div>
 
   <div class='work-layout'>
     <!-- TOC sidebar -->
-    <aside class='toc' id='toc'>
+    <aside class='toc' aria-label='Table of contents'>
       <div class='toc-inner'>
         <div class='toc-label'>Contents</div>
         <nav>
           {
-            sections.map((s, i) => (
+            sections.map((s) => (
               <a href={`#${s.id}`} class='toc-item' data-section={s.id}>
-                <span class='toc-bar-wrap'>
-                  <span class='toc-bar' id={`bar-${s.id}`} />
+                <span class='toc-bar-wrap' aria-hidden='true'>
+                  <span class='toc-bar' />
                 </span>
                 <span class='toc-text'>{s.label}</span>
               </a>
@@ -181,8 +173,8 @@ const { title, date, tags, sections, content } = Astro.props;
       </div>
     </aside>
 
-    <!-- Main article -->
-    <main class='work-main'>
+    <!-- Article -->
+    <article class='work-main'>
       <div class='work-col'>
         <a href='/' class='page-back'>
           <svg
@@ -192,6 +184,7 @@ const { title, date, tags, sections, content } = Astro.props;
             fill='none'
             stroke='currentColor'
             stroke-width='1.5'
+            aria-hidden='true'
           >
             <path d='M9.5 2.5L2.5 9.5M2.5 9.5H8M2.5 9.5V4'></path>
           </svg>
@@ -201,286 +194,298 @@ const { title, date, tags, sections, content } = Astro.props;
         <h1 class='page-title'>{title}</h1>
 
         <div class='page-meta'>
-          {date}
+          <time datetime={date}>{date}</time>
           {tags.map((t) => <span class='meta-tag'>{t}</span>)}
         </div>
 
         <div class='page-body' id='article-body' set:html={content} />
       </div>
-    </main>
+    </article>
   </div>
-
-  <style>
-    /* Progress bar */
-    .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      height: 2px;
-      width: 0%;
-      background: var(--link);
-      z-index: 300;
-      transition: width 0.1s linear;
-    }
-
-    /* Layout */
-    .work-layout {
-      display: flex;
-      align-items: flex-start;
-      min-height: 100vh;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 0 20px;
-      gap: 0;
-    }
-
-    /* TOC sidebar */
-    .toc {
-      width: 180px;
-      flex-shrink: 0;
-      position: sticky;
-      top: 40px;
-      padding-top: 80px;
-      padding-right: 24px;
-      self-align: flex-start;
-    }
-    .toc-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-    .toc-label {
-      font-size: 10px;
-      font-weight: 500;
-      color: var(--text3);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-    .toc-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 0;
-      text-decoration: none;
-      color: var(--text3);
-      font-size: 11px;
-      line-height: 1.3;
-      transition: color 0.15s;
-      border-radius: 4px;
-    }
-    .toc-item:hover,
-    .toc-item.active {
-      color: var(--text);
-    }
-
-    /* Progress bar per section */
-    .toc-bar-wrap {
-      width: 3px;
-      height: 28px;
-      background: var(--border);
-      border-radius: 2px;
-      flex-shrink: 0;
-      overflow: hidden;
-      position: relative;
-    }
-    .toc-bar {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 0%;
-      background: var(--link);
-      border-radius: 2px;
-      transition: height 0.15s ease;
-    }
-    .toc-item.active .toc-bar-wrap {
-      background: rgba(126, 184, 247, 0.15);
-    }
-    .toc-item.active .toc-bar {
-      height: 100%;
-    }
-
-    /* Main content */
-    .work-main {
-      flex: 1;
-      min-width: 0;
-    }
-    .work-col {
-      max-width: 580px;
-      padding: 50px 0 80px;
-    }
-
-    .page-back {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text2);
-      margin-bottom: 28px;
-      transition: color 0.15s;
-      text-decoration: none;
-    }
-    .page-back:hover {
-      color: var(--text);
-    }
-
-    .page-title {
-      font-size: 19px;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 10px;
-      letter-spacing: -0.01em;
-      line-height: 1.3;
-    }
-    .page-meta {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 6px;
-      font-size: 11px;
-      color: var(--text3);
-      margin-bottom: 32px;
-    }
-    .meta-tag {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      padding: 2px 7px;
-      border-radius: 4px;
-      font-size: 10px;
-    }
-
-    /* Article body */
-    .page-body section {
-      margin-bottom: 40px;
-      scroll-margin-top: 32px;
-    }
-    .page-body h2 {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text);
-      margin-bottom: 12px;
-      padding-bottom: 8px;
-      border-bottom: 1px solid var(--border);
-    }
-    .page-body p {
-      font-size: 13px;
-      color: var(--text2);
-      line-height: 1.85;
-      margin-bottom: 12px;
-    }
-    .page-body ul {
-      margin: 0 0 12px 18px;
-    }
-    .page-body li {
-      font-size: 13px;
-      color: var(--text2);
-      line-height: 1.7;
-      margin-bottom: 4px;
-    }
-    .page-body a {
-      color: var(--link);
-      border-bottom: 1px solid rgba(126, 184, 247, 0.25);
-      transition: border-color 0.15s;
-    }
-    .page-body a:hover {
-      border-color: var(--link);
-    }
-
-    /* Images */
-    .page-body figure {
-      margin: 20px 0 24px;
-      border-radius: 10px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-    .page-body figure img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .page-body figcaption {
-      font-size: 11px;
-      color: var(--text3);
-      padding: 8px 12px;
-      background: var(--bg2);
-      border-top: 1px solid var(--border);
-    }
-
-    /* Case study external links */
-    .case-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .case-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      padding: 8px 14px;
-      border-radius: 8px;
-      border: 1px solid var(--border2);
-      background: var(--bg2);
-      font-size: 12px;
-      color: var(--text2);
-      text-decoration: none !important;
-      border-bottom: none !important;
-      transition:
-        color 0.15s,
-        background 0.15s,
-        border-color 0.15s;
-    }
-    .case-link:hover {
-      color: var(--text);
-      background: var(--bg3);
-      border-color: var(--border2);
-    }
-
-    /* Hide TOC on small screens */
-    @media (max-width: 700px) {
-      .toc {
-        display: none;
-      }
-      .work-layout {
-        padding: 0 20px;
-      }
-    }
-  </style>
-
-  <script>
-    // ── Reading progress bar ──────────────────────────────────
-    const bar = document.getElementById('progress-bar');
-    function updateProgress() {
-      const total = document.body.scrollHeight - window.innerHeight;
-      bar.style.width = (window.scrollY / total) * 100 + '%';
-    }
-    window.addEventListener('scroll', updateProgress, { passive: true });
-
-    // ── TOC active section tracking ───────────────────────────
-    const tocItems = document.querySelectorAll('.toc-item');
-    const sections = document.querySelectorAll('.page-body section[id]');
-
-    function onScroll() {
-      let current = '';
-      sections.forEach((sec) => {
-        if (window.scrollY >= sec.offsetTop - 80) current = sec.id;
-      });
-      tocItems.forEach((item) => {
-        const active = item.dataset.section === current;
-        item.classList.toggle('active', active);
-      });
-    }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-
-    // ── Smooth scroll on TOC click ────────────────────────────
-    tocItems.forEach((item) => {
-      item.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.getElementById(item.dataset.section);
-        if (target)
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      });
-    });
-  </script>
 </Base>
+
+<style>
+  .progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: var(--link);
+    z-index: 300;
+    transition: width 0.1s linear;
+  }
+  .work-layout {
+    display: flex;
+    align-items: flex-start;
+    min-height: 100vh;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* TOC */
+  .toc {
+    width: 180px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 40px;
+    padding-top: 80px;
+    padding-right: 24px;
+  }
+  .toc-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .toc-label {
+    font-family: var(--font-ui);
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--text3);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .toc-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 0;
+    text-decoration: none;
+    color: var(--text3);
+    font-family: var(--font-code);
+    font-size: 11px;
+    line-height: 1.3;
+    transition: color 0.15s;
+    border-radius: 4px;
+  }
+  .toc-item:hover,
+  .toc-item.active {
+    color: var(--text);
+  }
+  .toc-bar-wrap {
+    width: 3px;
+    height: 28px;
+    background: var(--border);
+    border-radius: 2px;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+  }
+  .toc-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    background: var(--link);
+    border-radius: 2px;
+    transition: height 0.15s ease;
+  }
+  .toc-item.active .toc-bar-wrap {
+    background: rgba(88, 166, 255, 0.15);
+  }
+  .toc-item.active .toc-bar {
+    height: 100%;
+  }
+
+  /* Article */
+  .work-main {
+    flex: 1;
+    min-width: 0;
+  }
+  .work-col {
+    max-width: 580px;
+    padding: 50px 0 80px;
+  }
+
+  .page-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    color: var(--text2);
+    margin-bottom: 28px;
+    transition: color 0.15s;
+    text-decoration: none;
+  }
+  .page-back:hover {
+    color: var(--text);
+  }
+
+  .page-title {
+    font-family: var(--font-ui);
+    font-size: 19px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+  }
+  .page-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-code);
+    font-size: 11px;
+    color: var(--text3);
+    margin-bottom: 32px;
+  }
+  .meta-tag {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 2px 7px;
+    border-radius: 4px;
+    font-size: 10px;
+  }
+
+  /* Body */
+  .page-body section {
+    margin-bottom: 40px;
+    scroll-margin-top: 32px;
+  }
+  .page-body h2 {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-body p {
+    font-family: var(--font-code);
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.85;
+    margin-bottom: 12px;
+  }
+  .page-body ul {
+    margin: 0 0 12px 18px;
+  }
+  .page-body li {
+    font-family: var(--font-code);
+    font-size: 13px;
+    color: var(--text2);
+    line-height: 1.7;
+    margin-bottom: 4px;
+  }
+  .page-body a {
+    color: var(--link);
+    border-bottom: 1px solid rgba(88, 166, 255, 0.25);
+  }
+  .page-body a:hover {
+    border-color: var(--link);
+  }
+  .page-body figure {
+    margin: 20px 0 24px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .page-body figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .page-body figcaption {
+    font-family: var(--font-code);
+    font-size: 11px;
+    color: var(--text3);
+    padding: 8px 12px;
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+  }
+  .page-body pre {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    margin-bottom: 16px;
+  }
+  .page-body code {
+    font-family: var(--font-code); /* uses CSS var, not hardcoded */
+    font-size: 12px;
+    color: var(--text2);
+    line-height: 1.6;
+  }
+  .case-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .case-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border2);
+    background: var(--bg2);
+    font-family: var(--font-code);
+    font-size: 12px;
+    color: var(--text2);
+    text-decoration: none;
+    border-bottom: none;
+    transition:
+      color 0.15s,
+      background 0.15s;
+  }
+  .case-link:hover {
+    color: var(--text);
+    background: var(--bg3);
+  }
+
+  @media (max-width: 700px) {
+    .toc {
+      display: none;
+    }
+    .work-layout {
+      padding: 0 20px;
+    }
+  }
+</style>
+
+<script>
+  const bar = document.getElementById('progress-bar');
+  const tocItems = document.querySelectorAll('.toc-item');
+  const sections = document.querySelectorAll('.page-body section[id]');
+
+  function updateProgress() {
+    const total = document.body.scrollHeight - window.innerHeight;
+    if (bar && total > 0)
+      bar.style.width = (window.scrollY / total) * 100 + '%';
+  }
+
+  function onScroll() {
+    updateProgress();
+    let current = '';
+    sections.forEach((sec) => {
+      if (window.scrollY >= (sec as HTMLElement).offsetTop - 80)
+        current = sec.id;
+    });
+    tocItems.forEach((item) => {
+      item.classList.toggle(
+        'active',
+        (item as HTMLElement).dataset.section === current,
+      );
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  tocItems.forEach((item) => {
+    item.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.getElementById(
+        (item as HTMLElement).dataset.section!,
+      );
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+</script>
