@@ -1,28 +1,90 @@
 ---
-import '../styles/global.css';
+// src/layouts/Base.astro
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
+  noIndex?: boolean;
 }
+
 const {
-  title = 'Monfort Brian',
-  description = 'AI Engineer building RAG systems, automation workflows, and production AI tools for East Africa and beyond.',
+  title       = 'Monfort Brian - Product Design Engineer',
+  description = 'Product Design Engineer blending UI, code, and automation. Building pixel-perfect web experiences and scalable systems.',
+  ogImage     = '/og-image.png',
+  noIndex     = false,
 } = Astro.props;
+
+const siteUrl    = 'https://monfortbrian.com';
+const canonical  = new URL(Astro.url.pathname, siteUrl).href;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}`;
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang="en">
   <head>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <meta name='description' content={description} />
-    <meta property='og:title' content={title} />
-    <meta property='og:description' content={description} />
-    <title>{title}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="canonical" href={canonical} />
 
-    <link rel='icon' type='image/svg+xml' href='/favicon-new.ico' />
+    <!-- Primary Meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Monfort Brian" />
+    <meta name="robots" content={noIndex ? 'noindex,nofollow' : 'index,follow'} />
+
+    <!-- Open Graph - controls WhatsApp, X, LinkedIn, iMessage previews -->
+    <meta property="og:type"         content="website" />
+    <meta property="og:url"          content={canonical} />
+    <meta property="og:title"        content={title} />
+    <meta property="og:description"  content={description} />
+    <meta property="og:image"        content={ogImageUrl} />
+    <meta property="og:image:width"  content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name"    content="Monfort Brian" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content={ogImageUrl} />
+    <meta name="twitter:creator"     content="@monfortbrian" />
+
+    <!-- Favicon -->
+    <link rel="icon"             type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon"                      href="/favicon.svg" />
+    <link rel="sitemap"                               href="/sitemap.xml" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Geist+Mono:wght@300;400;500&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Geist+Mono:wght@300;400;500&display=swap"
+      />
+    </noscript>
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+
+    <!-- Inline theme: runs before first paint - prevents flash -->
+    <script is:inline>
+      (function(){try{var s=localStorage.getItem('theme')||'system';var p=s==='system'?(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):s;document.documentElement.setAttribute('data-theme',p);}catch(e){}})();
+    </script>
+
+    <!-- JSON-LD structured data: helps Google understand who you are -->
+    <script type="application/ld+json" is:inline>
+      {"@context":"https://schema.org","@type":"Person","name":"Monfort Brian","alternateName":"宁俊","url":"https://monfortbrian.com","jobTitle":"Product Design Engineer","description":"Product Design Engineer blending UI, code, and automation.","sameAs":["https://github.com/monfortbrian","https://linkedin.com/in/monfortbrian","https://dribbble.com/monfortbrian"]}
+    </script>
   </head>
   <body>
-    <slot />
+    <main>
+      <slot />
+    </main>
   </body>
 </html>
