@@ -8,14 +8,8 @@ export async function getStaticPaths() {
       title: 'RegIQ: Building Regulatory Intelligence for East African Banks',
       description:
         'How I built a RAG pipeline over 26 BNR directive PDFs, cutting compliance query time from 25 minutes to under 30 seconds.',
-      date: '2025',
-      tags: [
-        'RAG',
-        'LangChain',
-        'API',
-        'Docker',
-        'Chrome Extension',
-      ],
+      date: 'RAG',
+      tags: ['RAG', 'NLP', 'Data Engineering'],
       sections: [
         { id: 'problem', label: 'The problem' },
         { id: 'built', label: 'What I built' },
@@ -65,38 +59,88 @@ export async function getStaticPaths() {
       `,
     },
     {
-      slug: 'opsbot',
-      title: 'OpsBot: AI Operations Intelligence Across Two Industries',
+      slug: 'skystone-ops-engine',
+      title:
+        'SkyStone: Unified Operations Intelligence for Manufacturing & Supply Chain',
       description:
-        'A Slack-native AI assistant that aggregates operational data, generates natural-language summaries, and surfaces anomalies automatically.',
-      date: '2024',
-      tags: ['Python', 'OpenAI', 'Slack', 'n8n', 'PostgreSQL'],
+        'An operations intelligence platform that unified production, workforce management, inventory, and sales into a single real-time decision system for manufacturing operations.',
+      date: 'Automation & AI',
+      tags: ['Operations Intelligence', 'Automation', 'Manufacturing'],
       sections: [
         { id: 'problem', label: 'The problem' },
         { id: 'built', label: 'What I built' },
+        { id: 'impact', label: 'Business impact' },
         { id: 'results', label: 'Results' },
-        { id: 'links', label: 'Links' },
       ],
       content: `
-        <section id="problem">
-          <h2>The problem</h2>
-          <p>Operations teams at two companies were drowning in manual reporting - pulling data from 4–6 systems daily to produce status reports nobody had time to read.</p>
-        </section>
-        <section id="built">
-          <h2>What I built</h2>
-          <p>OpsBot is a Slack-native AI assistant that aggregates operational data, generates natural-language summaries, and surfaces anomalies before humans notice them.</p>
-        </section>
-        <section id="results">
-          <h2>Results</h2>
-          <p>Reduced daily reporting time by 3 hours per ops manager. Anomaly detection caught two critical stock issues before they became customer-facing problems.</p>
-        </section>
-        <section id="links">
-          <h2>Links</h2>
-          <div class="case-links">
-            <a href="https://github.com/monfortbrian" class="case-link" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </section>
-      `,
+    <section id="problem">
+      <h2>The problem</h2>
+
+      <p>
+        As SkyStone Group expanded its manufacturing operations, critical business data became increasingly fragmented across departments. Production teams tracked output separately from inventory, workforce attendance lived in isolated systems, and management relied on manually compiled reports to understand what was happening across the business.
+      </p>
+
+      <p>
+        This lack of operational visibility created delays in decision-making. Inventory shortages were often discovered too late, attendance data required manual reconciliation, and leadership had no single source of truth for production, sales, workforce performance, and stock movement.
+      </p>
+
+      <p>
+        The challenge was not a lack of data. The challenge was turning operational data into operational intelligence.
+      </p>
+    </section>
+
+    <section id="built">
+      <h2>What I built</h2>
+
+      <p>
+        We designed and implemented a centralized operations intelligence platform that connects manufacturing, inventory, workforce management, and sales into a unified ecosystem.
+      </p>
+
+      <p>
+        The platform integrates biometric attendance systems, production records, inventory movements, procurement workflows, and sales activity into a shared operational layer powered by automation and real-time reporting.
+      </p>
+
+      <p>
+        Rather than functioning as a traditional dashboard, the system continuously monitors business activity, orchestrates workflows, generates reports, and surfaces operational risks before they impact production.
+      </p>
+
+      <p>
+        A Just-In-Time inventory model was introduced to align raw material consumption with production demand, helping procurement teams anticipate shortages while reducing unnecessary stock accumulation. At the same time, automated workforce tracking eliminated manual attendance reconciliation and provided reliable payroll-ready records.
+      </p>
+
+      <p>
+        The platform also became the company's reporting engine, automatically producing daily and weekly operational summaries covering production performance, stock levels, workforce activity, sales trends, and emerging risks. These insights are delivered directly to management through familiar communication channels, enabling faster and better-informed decisions.
+      </p>
+    </section>
+
+    <section id="impact">
+      <h2>Business impact</h2>
+
+      <p>
+        The most significant outcome was the creation of a single operational source of truth across the organization. Information that previously required coordination between multiple departments became instantly accessible and continuously updated.
+      </p>
+
+      <p>
+        Managers gained visibility into production performance, inventory health, workforce attendance, and sales activity without waiting for manual reports. Operational teams were able to respond proactively to supply chain issues, workforce anomalies, and production bottlenecks before they escalated into larger business problems.
+      </p>
+
+      <p>
+        By transforming disconnected workflows into a coordinated operational system, SkyStone Ops Engine shifted the organization from reactive management toward real-time operational decision-making.
+      </p>
+    </section>
+
+    <section id="results">
+      <h2>Results</h2>
+
+      <p>
+        The platform significantly reduced manual administrative work, improved reporting speed, strengthened inventory planning, and increased visibility across departments. Executive reporting that previously required days of manual consolidation became automated, while operational teams gained immediate access to the information needed to keep production running efficiently.
+      </p>
+
+      <p>
+        Beyond automation, the system established a foundation for data-driven operations, enabling leadership to manage the business with greater confidence, accuracy, and speed.
+      </p>
+    </section>
+  `,
     },
     {
       slug: 'qms-pipeline',
@@ -104,7 +148,7 @@ export async function getStaticPaths() {
       description:
         'An automated ETL pipeline turning siloed queue management data into live Power BI executive dashboards with SLA tracking.',
       date: '2024',
-      tags: ['Python', 'PostgreSQL', 'Power BI', 'ETL', 'REST API'],
+
       sections: [
         { id: 'problem', label: 'The problem' },
         { id: 'built', label: 'What I built' },
@@ -193,7 +237,6 @@ const { title, description, date, tags, sections, content } = Astro.props;
         <h1 class='page-title'>{title}</h1>
 
         <div class='page-meta'>
-          <time datetime={date}>{date}</time>
           {tags.map((t) => <span class='meta-tag'>{t}</span>)}
         </div>
 
